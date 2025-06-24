@@ -1,0 +1,134 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- LIGHT MODE COLORS (UNCHANGED) --- */
+    --radius: 0.5rem;
+
+    --background: 0 0% 100%;       /* #FFFFFF (Pure White) */
+    --foreground: 220 10% 15%;     /* #262B32 (Very Dark Greyish Blue for text) */
+    --primary: 209 81% 29%;        /* #0E4B7A (Deep, rich Navy Blue for primary actions/branding) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 210 20% 95%;      /* #E6EDF2 (Very Light Grey-Blue for secondary backgrounds) */
+    --secondary-foreground: 220 10% 15%; /* Text on secondary */
+    --accent: 210 70% 40%;         /* #1E7180 (Muted Teal-Blue for subtle highlights/accents) */
+    --accent-foreground: 0 0% 100%;  /* White text on accent */
+    --muted: 210 10% 45%;          /* #707A85 (Medium Grey for secondary/muted text) */
+    --muted-foreground: 210 10% 25%; /* #424A53 (Darker muted text) */
+    --card: 0 0% 100%;             /* #FFFFFF (Card backgrounds) */
+    --card-foreground: 220 10% 15%; /* #262B32 (Text on cards) */
+    --popover: 0 0% 100%;          /* #FFFFFF (Popover backgrounds) */
+    --popover-foreground: 220 10% 15%; /* #262B32 (Text on popovers) */
+    --destructive: 350 70% 50%;    /* #DA3A4D (Red for errors/destructive actions) */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 210 15% 90%;         /* #D9E0E8 (Light Grey-Blue for borders) */
+    --input: 210 15% 95%;          /* #F2F5F8 (Very Light Grey-Blue for input backgrounds) */
+    --ring: 209 81% 29%;           /* #0E4B7A (Focus ring color - matches primary) */
+
+    /* Status Colors */
+    --success: 120 60% 40%;        /* #228B22 (Forest Green) */
+    --warning: 45 100% 50%;        /* #FFC107 (Amber) */
+    --error: 0 70% 50%;            /* #FF3333 (Bright Red) */
+  }
+
+  .dark {
+    /* --- NEW BLACK-BASED DARK MODE COLORS --- */
+    --background: 0 0% 5%;         /* #0D0D0D (Almost black, very deep) */
+    --foreground: 0 0% 95%;        /* #F2F2F2 (Near white for primary text) */
+    --primary: 209 81% 60%;        /* #4DB0FF (Vibrant, clear blue for primary actions/branding) */
+    --primary-foreground: 0 0% 5%; /* #0D0D0D (Text on primary) */
+    --secondary: 0 0% 15%;         /* #262626 (Slightly lighter black for secondary backgrounds) */
+    --secondary-foreground: 0 0% 90%; /* #E6E6E6 (Text on secondary) */
+    --accent: 210 70% 65%;         /* #60D7E8 (Bright teal-blue for dynamic accents) */
+    --accent-foreground: 0 0% 5%;  /* #0D0D0D (Text on accent) */
+    --muted: 0 0% 40%;             /* #666666 (Dark grey for secondary/muted text) */
+    --muted-foreground: 0 0% 70%;  /* #B3B3B3 (Lighter grey for muted text) */
+    --card: 0 0% 8%;               /* #141414 (Slightly lighter than background for card depth) */
+    --card-foreground: 0 0% 95%;   /* #F2F2F2 (Text on cards) */
+    --popover: 0 0% 8%;            /* #141414 (Popover backgrounds) */
+    --popover-foreground: 0 0% 95%; /* #F2F2F2 (Text on popovers) */
+    --destructive: 350 70% 60%;    /* #FF6373 (Brighter red for errors/destructive actions) */
+    --destructive-foreground: 0 0% 5%; /* #0D0D0D (Text on destructive) */
+    --border: 0 0% 20%;            /* #333333 (Dark grey for borders) */
+    --input: 0 0% 12%;             /* #1F1F1F (Slightly lighter than background for input) */
+    --ring: 209 81% 60%;           /* #4DB0FF (Focus ring color - matches primary dark) */
+
+    /* Status Colors (Adjusted for Dark Mode visibility) */
+    --success: 120 60% 50%;        /* #4CAF50 */
+    --warning: 45 100% 50%;        /* #FFC107 */
+    --error: 0 70% 60%;            /* #FF6666 */
+  }
+
+  /* --- GLOBAL BASE AND TYPOGRAPHY (UNCHANGED, but applies new colors) --- */
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+  }
+
+  h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
+  h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
+  h3 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 600; line-height: 1.3; }
+
+  p, li, span {
+    @apply font-body;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  code, pre { @apply font-mono; }
+
+  a {
+    color: hsl(var(--primary));
+    transition: color 0.2s ease, font-weight 0.2s ease;
+  }
+
+  a:hover {
+    color: hsl(var(--accent));
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Transitions for theme switching */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+
+/* Subtle shadows */
+.card-shadow { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); }
+.dark .card-shadow { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); }
+
+/* Hover transitions */
+.hover-transition { transition: all 0.2s ease; }
+.hover-transition:hover { transform: translateY(-2px); }
