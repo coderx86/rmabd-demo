@@ -46,13 +46,13 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden w-full">
       {/* Animated Background */}
       <motion.div
         variants={backgroundVariants}
         initial="hidden"
         animate="visible"
-        className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent"
+        className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent w-full"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40 dark:from-black/80 dark:to-black/60" />
       </motion.div>
@@ -62,27 +62,24 @@ export function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 text-center text-white max-w-5xl mx-auto px-6"
+        className="relative z-10 text-center text-white w-full max-w-5xl mx-auto px-4 sm:px-6"
       >
-        <motion.h1 variants={itemVariants} className="font-heading mb-8 leading-tight text-white">
+        <motion.h1 variants={itemVariants} className="mb-8 leading-tight text-white">
           RoboMechatronics
           <motion.span variants={itemVariants} className="block text-accent">
             Association
           </motion.span>
         </motion.h1>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-xl md:text-2xl mb-12 text-white/90 font-body max-w-3xl mx-auto"
-        >
+        <motion.p variants={itemVariants} className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto px-4">
           Innovating Tomorrow Through Robotics and Technology
         </motion.p>
 
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center px-4">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              className="bg-primary hover:bg-accent text-primary-foreground px-8 py-4 text-lg font-medium"
+              className="bg-primary hover:bg-accent text-primary-foreground px-8 py-4 text-lg font-medium w-full sm:w-auto"
             >
               Join Our Community
             </Button>
@@ -92,7 +89,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg font-medium dark:text-white dark:hover:text-white light:text-black light:hover:text-black"
+              className="border-white text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg font-medium dark:text-white dark:hover:text-white light:text-black light:hover:text-black w-full sm:w-auto"
             >
               <Link href="#about" className="text-black dark:text-white">
                 Learn More

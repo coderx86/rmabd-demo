@@ -29,13 +29,13 @@ export function EventHeroSection() {
   }
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden w-full">
       {/* Background with CSS gradient instead of image */}
       <motion.div
         variants={backgroundVariants}
         initial="hidden"
         animate="visible"
-        className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-accent"
+        className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-accent w-full"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 dark:from-black/80 dark:to-black/60" />
       </motion.div>
@@ -45,21 +45,21 @@ export function EventHeroSection() {
         variants={contentVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
+        className="relative z-10 text-center text-white w-full max-w-4xl mx-auto px-4"
       >
         <motion.h1
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="font-heading mb-4 text-white"
+          className="mb-4 text-white"
         >
-          RoboWars <span className="text-accent">2024</span>
+          Techday <span className="text-accent">2025</span>
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-xl md:text-2xl text-white/90 font-body"
+          className="text-xl md:text-2xl text-white/90"
         >
           The Ultimate Robotics Competition
         </motion.p>

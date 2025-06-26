@@ -13,13 +13,13 @@ export function AboutEvent() {
           <div className="space-y-8">
             <AnimatedSection direction="right" delay={0.1}>
               <h2 className="section-heading text-foreground">
-                About <span className="text-primary">RoboWars 2024</span>
+                About <span className="text-primary">Techday 2025</span>
               </h2>
             </AnimatedSection>
 
             <StaggerContainer staggerDelay={0.15}>
               <p className="text-muted-foreground leading-relaxed">
-                RoboWars 2024 is the most anticipated robotics competition of the year, bringing together brilliant
+                Techday 2025 is the most anticipated robotics competition of the year, bringing together brilliant
                 minds from universities across the country. This event showcases the pinnacle of engineering excellence,
                 creativity, and competitive spirit in the field of robotics.
               </p>
