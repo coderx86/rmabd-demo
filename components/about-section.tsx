@@ -62,7 +62,7 @@ export function AboutSection() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="text-4xl font-bold text-primary mb-3"
+                    className="text-3xl font-bold text-primary mb-3"
                   >
                     500+
                   </motion.div>
@@ -77,7 +77,7 @@ export function AboutSection() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
-                    className="text-4xl font-bold text-primary mb-3"
+                    className="text-3xl font-bold text-primary mb-3"
                   >
                     50+
                   </motion.div>

@@ -41,7 +41,7 @@ export function AboutEvent() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="text-4xl font-bold text-primary mb-3"
+                    className="text-3xl font-bold text-primary mb-3"
                   >
                     ৳50,000
                   </motion.div>
@@ -56,7 +56,7 @@ export function AboutEvent() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
-                    className="text-4xl font-bold text-primary mb-3"
+                    className="text-3xl font-bold text-primary mb-3"
                   >
                     100+
                   </motion.div>
@@ -81,7 +81,7 @@ export function AboutEvent() {
                 >
                   <span className="text-3xl">🤖</span>
                 </motion.div>
-                <h3 className="text-xl font-bold text-foreground mb-2">RoboWars 2024</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">Techday 2025</h3>
                 <p className="text-muted-foreground">Official Event Poster</p>
               </div>
             </motion.div>
