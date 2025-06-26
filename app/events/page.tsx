@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect } from "react"
 import { Navbar } from "@/components/navbar"
 import { EventHeroSection } from "@/components/event-hero-section"
 import { AboutEvent } from "@/components/about-event"
@@ -8,20 +11,34 @@ import { SponsorsPartners } from "@/components/sponsors-partners"
 import { CampusAmbassador } from "@/components/campus-ambassador"
 import { ContactInfo } from "@/components/contact-info"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function EventsPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <EventHeroSection />
-      <AboutEvent />
+      <div id="event-about">
+        <AboutEvent />
+      </div>
       <DateLocation />
-      <EventSegments />
+      <div id="event-segments">
+        <EventSegments />
+      </div>
       <EventGallery />
-      <SponsorsPartners />
+      <div id="event-sponsors">
+        <SponsorsPartners />
+      </div>
       <CampusAmbassador />
-      <ContactInfo />
+      <div id="event-contact">
+        <ContactInfo />
+      </div>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

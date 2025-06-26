@@ -97,7 +97,6 @@ export function EventSegments() {
           ))}
         </div>
       </div>
-
       {/* Modal */}
       {/* Modal */}
       <Dialog open={!!selectedSegment} onOpenChange={() => setSelectedSegment(null)}>
@@ -141,7 +140,7 @@ export function EventSegments() {
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold mb-3 font-heading">Instructions</h3>
                   <div className="bg-muted p-3 sm:p-4 rounded-lg">
-                    <p className="text-muted-foreground leading-relaxed font-body text-sm sm:text-base">
+                    <p className="text-light-black dark:text-light-white leading-relaxed font-body text-sm sm:text-base">
                       {selectedSegment.details.instructions}
                     </p>
                   </div>
@@ -173,6 +172,7 @@ export function EventSegments() {
             </>
           )}
         </DialogContent>
-      </Dialog>    </section>
+      </Dialog>{" "}
+    </section>
   )
 }

@@ -1,4 +1,9 @@
+"use client"
+
 import { Camera, Trophy, Users, Zap, Target, Cpu } from "lucide-react"
+import { AnimatedSection } from "@/components/animated-section"
+import { StaggerContainer } from "@/components/stagger-container"
+import { motion } from "framer-motion"
 
 const galleryItems = [
   { icon: Camera, title: "Opening Ceremony", color: "from-primary/20 to-accent/20" },
@@ -11,31 +16,42 @@ const galleryItems = [
 
 export function EventGallery() {
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-20">
-          <h2 className="font-heading text-foreground mb-6">
+        <AnimatedSection className="text-center mb-20">
+          <h2 className="section-heading text-foreground mb-6">
             Event <span className="text-primary">Gallery</span>
           </h2>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-            Highlights from previous RoboWars competitions
-          </p>
-        </div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Highlights from previous RoboWars competitions</p>
+        </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
           {galleryItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`group relative overflow-hidden rounded-lg card-shadow hover-transition bg-gradient-to-br ${item.color} h-64 flex items-center justify-center`}
+              whileHover={{
+                scale: 1.05,
+                y: -10,
+                rotateX: 5,
+              }}
+              transition={{ duration: 0.3 }}
+              className={`group relative overflow-hidden rounded-lg card-shadow hover-transition bg-gradient-to-br ${item.color} h-64 flex items-center justify-center cursor-pointer`}
             >
               <div className="text-center">
-                <item.icon className="h-12 w-12 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-lg font-semibold text-foreground font-heading">{item.title}</h3>
+                <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.6 }}>
+                  <item.icon className="h-12 w-12 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                </motion.div>
+                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+              />
+            </motion.div>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

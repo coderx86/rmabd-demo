@@ -1,134 +1,176 @@
-/* src/app/globals.css */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* --- LIGHT MODE COLORS (UNCHANGED) --- */
-    --radius: 0.5rem;
-
-    --background: 0 0% 100%;       /* #FFFFFF (Pure White) */
-    --foreground: 220 10% 15%;     /* #262B32 (Very Dark Greyish Blue for text) */
-    --primary: 209 81% 29%;        /* #0E4B7A (Deep, rich Navy Blue for primary actions/branding) */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
-    --secondary: 210 20% 95%;      /* #E6EDF2 (Very Light Grey-Blue for secondary backgrounds) */
-    --secondary-foreground: 220 10% 15%; /* Text on secondary */
-    --accent: 210 70% 40%;         /* #1E7180 (Muted Teal-Blue for subtle highlights/accents) */
-    --accent-foreground: 0 0% 100%;  /* White text on accent */
-    --muted: 210 10% 45%;          /* #707A85 (Medium Grey for secondary/muted text) */
-    --muted-foreground: 210 10% 25%; /* #424A53 (Darker muted text) */
-    --card: 0 0% 100%;             /* #FFFFFF (Card backgrounds) */
-    --card-foreground: 220 10% 15%; /* #262B32 (Text on cards) */
-    --popover: 0 0% 100%;          /* #FFFFFF (Popover backgrounds) */
-    --popover-foreground: 220 10% 15%; /* #262B32 (Text on popovers) */
-    --destructive: 350 70% 50%;    /* #DA3A4D (Red for errors/destructive actions) */
-    --destructive-foreground: 0 0% 100%; /* White text on destructive */
-    --border: 210 15% 90%;         /* #D9E0E8 (Light Grey-Blue for borders) */
-    --input: 210 15% 95%;          /* #F2F5F8 (Very Light Grey-Blue for input backgrounds) */
-    --ring: 209 81% 29%;           /* #0E4B7A (Focus ring color - matches primary) */
-
-    /* Status Colors */
-    --success: 120 60% 40%;        /* #228B22 (Forest Green) */
-    --warning: 45 100% 50%;        /* #FFC107 (Amber) */
-    --error: 0 70% 50%;            /* #FF3333 (Bright Red) */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 240 5% 25%;
+    --accent: 142.1 76.2% 36.3%;
+    --accent-foreground: 355.7 100% 97.3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+    --success: 142.1 76.2% 36.3%;
+    --warning: 38 92% 50%;
+    --error: 0 84.2% 60.2%;
+    --cream: 35 20% 94%;
+    --cream-foreground: 240 5% 25%;
   }
 
   .dark {
-    /* --- NEW BLACK-BASED DARK MODE COLORS --- */
-    --background: 0 0% 5%;         /* #0D0D0D (Almost black, very deep) */
-    --foreground: 0 0% 95%;        /* #F2F2F2 (Near white for primary text) */
-    --primary: 209 81% 60%;        /* #4DB0FF (Vibrant, clear blue for primary actions/branding) */
-    --primary-foreground: 0 0% 5%; /* #0D0D0D (Text on primary) */
-    --secondary: 0 0% 15%;         /* #262626 (Slightly lighter black for secondary backgrounds) */
-    --secondary-foreground: 0 0% 90%; /* #E6E6E6 (Text on secondary) */
-    --accent: 210 70% 65%;         /* #60D7E8 (Bright teal-blue for dynamic accents) */
-    --accent-foreground: 0 0% 5%;  /* #0D0D0D (Text on accent) */
-    --muted: 0 0% 40%;             /* #666666 (Dark grey for secondary/muted text) */
-    --muted-foreground: 0 0% 70%;  /* #B3B3B3 (Lighter grey for muted text) */
-    --card: 0 0% 8%;               /* #141414 (Slightly lighter than background for card depth) */
-    --card-foreground: 0 0% 95%;   /* #F2F2F2 (Text on cards) */
-    --popover: 0 0% 8%;            /* #141414 (Popover backgrounds) */
-    --popover-foreground: 0 0% 95%; /* #F2F2F2 (Text on popovers) */
-    --destructive: 350 70% 60%;    /* #FF6373 (Brighter red for errors/destructive actions) */
-    --destructive-foreground: 0 0% 5%; /* #0D0D0D (Text on destructive) */
-    --border: 0 0% 20%;            /* #333333 (Dark grey for borders) */
-    --input: 0 0% 12%;             /* #1F1F1F (Slightly lighter than background for input) */
-    --ring: 209 81% 60%;           /* #4DB0FF (Focus ring color - matches primary dark) */
-
-    /* Status Colors (Adjusted for Dark Mode visibility) */
-    --success: 120 60% 50%;        /* #4CAF50 */
-    --warning: 45 100% 50%;        /* #FFC107 */
-    --error: 0 70% 60%;            /* #FF6666 */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75%;
+    --accent: 142.1 76.2% 36.3%;
+    --accent-foreground: 355.7 100% 97.3%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --success: 142.1 76.2% 36.3%;
+    --warning: 38 92% 50%;
+    --error: 0 84.2% 60.2%;
   }
+}
 
-  /* --- GLOBAL BASE AND TYPOGRAPHY (UNCHANGED, but applies new colors) --- */
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    @apply font-body;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
-    font-weight: 700;
-    color: hsl(var(--foreground));
-  }
-
-  h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
-  h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
-  h3 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 600; line-height: 1.3; }
-
-  p, li, span {
-    @apply font-body;
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    font-weight: 400;
+    font-size: 16px;
     line-height: 1.6;
   }
 
-  code, pre { @apply font-mono; }
-
-  a {
-    color: hsl(var(--primary));
-    transition: color 0.2s ease, font-weight 0.2s ease;
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
   }
 
-  a:hover {
-    color: hsl(var(--accent));
-    font-weight: 500;
-    text-decoration: underline;
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .theme-transition {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  .hover-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .card-shadow {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .text-cream-foreground {
+    color: hsl(var(--cream-foreground));
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .hover-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-light-black {
+    @apply text-gray-800;
+  }
+
+  .text-light-white {
+    @apply text-gray-200;
   }
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: hsl(var(--muted)); }
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.5);
-  border-radius: 4px;
+::-webkit-scrollbar {
+  width: 8px;
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
 
 /* Smooth scrolling */
-html { scroll-behavior: smooth; }
-
-/* Transitions for theme switching */
-.theme-transition {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom animations */
+/* Remove default link underlines */
+a {
+  text-decoration: none;
+}
+
+/* Animation utilities */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
 
-/* Subtle shadows */
-.card-shadow { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); }
-.dark .card-shadow { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); }
-
-/* Hover transitions */
-.hover-transition { transition: all 0.2s ease; }
-.hover-transition:hover { transform: translateY(-2px); }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
