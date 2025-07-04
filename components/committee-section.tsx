@@ -123,7 +123,7 @@ export function CommitteeSection() {
   )
 
   return (
-    <section className="py-24 bg-cream dark:bg-slate-900">
+    <section id="team" className="py-24 bg-cream dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection className="text-center mb-20">
           <h2 className="section-heading text-foreground mb-6">

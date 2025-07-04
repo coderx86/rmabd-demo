@@ -45,7 +45,7 @@ const moderators = [
 
 export function ModeratorSection() {
   return (
-    <section id="team" className="py-24 bg-background">
+    <section id="moderator" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <AnimatedSection className="text-center mb-20">
           <h2 className="section-heading text-foreground mb-6">
