@@ -23,7 +23,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-light-black dark:text-light-white font-body text-sm">
-              © 2024 RoboMechatronics Association, CUET. All rights reserved.
+              © 2025 RoboMechatronics Association, CUET. All rights reserved.
             </p>
           </div>
         </motion.div>
