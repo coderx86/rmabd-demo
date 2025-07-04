@@ -5,7 +5,18 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Calendar, ArrowRight, MapPin, Users, Trophy, Sparkles, Clock, ChevronDown, ChevronUp } from "lucide-react"
+import {
+  Calendar,
+  ArrowRight,
+  MapPin,
+  Users,
+  Trophy,
+  Sparkles,
+  Clock,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+} from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 import { StaggerContainer } from "@/components/stagger-container"
 import { motion } from "framer-motion"
@@ -33,6 +44,15 @@ const allEvents = [
       participants: "52 teams from 15 universities",
       winner: "Team Phoenix - BUET",
       prizePool: "৳75,000",
+      description:
+        "RoboWars 2024 was our most ambitious robotics competition yet, featuring intense combat robot battles that pushed the boundaries of engineering creativity. Teams from across the country brought their most innovative designs to compete in multiple weight categories, showcasing cutting-edge technology and strategic combat techniques.",
+      sponsors: [
+        { name: "TechCorp Bangladesh", type: "Title Sponsor", logo: "🏢" },
+        { name: "Innovation Labs", type: "Gold Sponsor", logo: "🥇" },
+        { name: "RoboTech Solutions", type: "Silver Sponsor", logo: "🥈" },
+        { name: "Engineering Hub", type: "Bronze Sponsor", logo: "🥉" },
+        { name: "CUET Alumni Association", type: "Supporting Partner", logo: "🎓" },
+      ],
       highlights: [
         "Record-breaking 52 teams participated",
         "First-ever international team from India",
@@ -60,6 +80,14 @@ const allEvents = [
       participants: "200+ students and professionals",
       winner: "Best Innovation: Smart Agriculture System",
       prizePool: "৳30,000",
+      description:
+        "The Tech Innovation Summit brought together brilliant minds to showcase groundbreaking technological solutions addressing real-world challenges. From AI-powered healthcare systems to sustainable energy solutions, participants demonstrated the future of technology innovation in Bangladesh.",
+      sponsors: [
+        { name: "Future Tech BD", type: "Title Sponsor", logo: "🚀" },
+        { name: "StartupBD", type: "Gold Sponsor", logo: "💼" },
+        { name: "Innovation Fund", type: "Silver Sponsor", logo: "💰" },
+        { name: "Tech Incubator", type: "Supporting Partner", logo: "🏭" },
+      ],
       highlights: [
         "15 innovative projects showcased",
         "Industry experts as judges",
@@ -87,6 +115,13 @@ const allEvents = [
       participants: "80 students",
       winner: "Best Project: Automated Sorting System",
       prizePool: "৳15,000",
+      description:
+        "An intensive hands-on workshop designed to bridge the gap between theoretical knowledge and practical application in mechatronics. Participants learned to integrate mechanical, electrical, and software systems to create intelligent automated solutions.",
+      sponsors: [
+        { name: "AutoTech Industries", type: "Title Sponsor", logo: "⚙️" },
+        { name: "Mechatronics BD", type: "Gold Sponsor", logo: "🔧" },
+        { name: "Arduino Bangladesh", type: "Technology Partner", logo: "🔌" },
+      ],
       highlights: [
         "3-day intensive workshop",
         "Hands-on Arduino and sensor projects",
@@ -114,6 +149,14 @@ const allEvents = [
       participants: "35 teams from 12 universities",
       winner: "Team SkyHawks - CUET",
       prizePool: "৳40,000",
+      description:
+        "The first-ever drone racing championship in the region brought together skilled pilots and custom-built racing drones for an adrenaline-pumping competition. Teams navigated complex obstacle courses at breakneck speeds, showcasing precision flying and engineering excellence.",
+      sponsors: [
+        { name: "AeroTech BD", type: "Title Sponsor", logo: "🚁" },
+        { name: "Drone Hub", type: "Gold Sponsor", logo: "🎯" },
+        { name: "Flight Systems", type: "Silver Sponsor", logo: "✈️" },
+        { name: "Racing League BD", type: "Event Partner", logo: "🏁" },
+      ],
       highlights: [
         "First drone racing event in the region",
         "Custom-built obstacle courses",
@@ -141,6 +184,14 @@ const allEvents = [
       participants: "120 participants in 30 teams",
       winner: "Smart City Solutions - Mixed Team",
       prizePool: "৳25,000",
+      description:
+        "A marathon 48-hour coding and hardware hacking event where teams developed innovative IoT solutions for smart cities, healthcare, agriculture, and environmental monitoring. The hackathon emphasized practical applications that could make a real difference in everyday life.",
+      sponsors: [
+        { name: "IoT Bangladesh", type: "Title Sponsor", logo: "🌐" },
+        { name: "Smart Solutions Ltd", type: "Gold Sponsor", logo: "💡" },
+        { name: "Cloud Services BD", type: "Technology Partner", logo: "☁️" },
+        { name: "Sensor Tech", type: "Hardware Partner", logo: "📡" },
+      ],
       highlights: [
         "48-hour non-stop coding marathon",
         "Industry mentors and guidance",
@@ -563,12 +614,16 @@ export function EventsSection() {
         <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-4xl max-h-[95vh] overflow-y-auto p-0">
           {selectedEvent && selectedEvent.details && (
             <>
-              <DialogHeader className="p-4 sm:p-6 border-b border-border">
-                <div className="flex items-center space-x-3">
-                  <DialogTitle className="text-xl sm:text-2xl font-bold pr-8">{selectedEvent.name}</DialogTitle>
-                  <Badge variant="secondary" className="bg-gray-500 text-white">
-                    Completed
-                  </Badge>
+              <DialogHeader className="p-3 sm:p-4 md:p-6 border-b border-border">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 pr-8 sm:pr-12">
+                  <DialogTitle className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight flex-1 min-w-0">
+                    {selectedEvent.name}
+                  </DialogTitle>
+                  <div className="flex-shrink-0 sm:mt-1">
+                    <Badge variant="secondary" className="bg-gray-500 text-white text-xs sm:text-sm whitespace-nowrap">
+                      Completed
+                    </Badge>
+                  </div>
                 </div>
               </DialogHeader>
 
@@ -581,6 +636,12 @@ export function EventsSection() {
                     </div>
                     <h3 className="text-lg sm:text-2xl font-bold text-foreground px-4">{selectedEvent.name}</h3>
                   </div>
+                </div>
+
+                {/* Event Description */}
+                <div className="bg-muted/50 p-4 sm:p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">About This Event</h3>
+                  <p className="text-muted-foreground leading-relaxed">{selectedEvent.details.description}</p>
                 </div>
 
                 {/* Event Info Grid */}
@@ -626,6 +687,26 @@ export function EventsSection() {
                 <div className="bg-primary/10 p-4 rounded-lg text-center">
                   <h3 className="text-lg font-semibold text-primary mb-2">Total Prize Pool</h3>
                   <p className="text-2xl font-bold text-foreground">{selectedEvent.details.prizePool}</p>
+                </div>
+
+                {/* Sponsors Section */}
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Building2 className="h-5 w-5 text-primary mr-2" />
+                    Event Sponsors & Partners
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {selectedEvent.details.sponsors.map((sponsor, index) => (
+                      <div
+                        key={index}
+                        className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-md transition-shadow"
+                      >
+                        <div className="text-2xl mb-2">{sponsor.logo}</div>
+                        <h4 className="font-semibold text-foreground text-sm mb-1">{sponsor.name}</h4>
+                        <p className="text-xs text-muted-foreground">{sponsor.type}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Event Highlights */}
