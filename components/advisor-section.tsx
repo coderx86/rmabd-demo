@@ -10,8 +10,8 @@ import { motion } from "framer-motion"
 const advisors = [
   {
     id: 1,
-    name: "Dr. Mohammad Rahman",
-    designation: "Professor, Mechanical Engineering",
+    name: "Dr. Md Rahman",
+    designation: "Professor, ME",
     image: "/placeholder.svg?height=300&width=300",
     social: {
       email: "rahman@cuet.ac.bd",
