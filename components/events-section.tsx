@@ -1,12 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Calendar, ArrowRight, MapPin, Users, Trophy, Sparkles, Clock, ChevronDown, ChevronUp } from "lucide-react"
-import Link from "next/link"
 import { AnimatedSection } from "@/components/animated-section"
 import { StaggerContainer } from "@/components/stagger-container"
 import { motion } from "framer-motion"
@@ -161,6 +160,7 @@ const allEvents = [
 export function EventsSection() {
   const [selectedEvent, setSelectedEvent] = useState<(typeof allEvents)[0] | null>(null)
   const [showAllEvents, setShowAllEvents] = useState(false)
+  const lastVisibleEventRef = useRef<HTMLDivElement>(null)
 
   // Sort events to prioritize upcoming events
   const sortedEvents = [...allEvents].sort((a, b) => {
@@ -292,6 +292,21 @@ export function EventsSection() {
     }
   }
 
+  const handleShowMoreToggle = () => {
+    const newShowAllState = !showAllEvents
+    setShowAllEvents(newShowAllState)
+
+    // If we're hiding events (showing less), scroll to the last visible event
+    if (!newShowAllState) {
+      setTimeout(() => {
+        lastVisibleEventRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        })
+      }, 100)
+    }
+  }
+
   return (
     <section className="py-24 bg-background w-full overflow-x-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -308,6 +323,7 @@ export function EventsSection() {
           {eventsToShow.map((event, index) => (
             <motion.div
               key={event.id}
+              ref={index === 2 ? lastVisibleEventRef : null} // Reference to the 3rd event (last visible when collapsed)
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -527,7 +543,7 @@ export function EventsSection() {
           <AnimatedSection delay={0.3} className="text-center mt-12">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => setShowAllEvents(!showAllEvents)}
+                onClick={handleShowMoreToggle}
                 variant="outline"
                 size="lg"
                 className="px-8 py-3 font-medium bg-transparent hover:bg-primary hover:text-primary-foreground border-2"
@@ -540,8 +556,6 @@ export function EventsSection() {
             </motion.div>
           </AnimatedSection>
         )}
-
-        
       </div>
 
       {/* Event Details Modal for Completed Events */}
