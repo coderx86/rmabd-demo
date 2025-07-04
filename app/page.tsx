@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/about-section"
 import { AdvisorSection } from "@/components/advisor-section"
 import { ModeratorSection } from "@/components/moderator-section"
 import { CommitteeSection } from "@/components/committee-section"
+import { AlumniSection } from "@/components/alumni-section"
 import { EventsSection } from "@/components/events-section"
 import { Gallery } from "@/components/gallery"
 import { ContactInfo } from "@/components/contact-info"
@@ -27,6 +28,7 @@ export default function Home() {
       <AdvisorSection />
       <ModeratorSection />
       <CommitteeSection />
+      <AlumniSection />
       <Gallery />
       <ContactInfo />
       <Footer />
