@@ -23,24 +23,6 @@ const allEvents = [
   },
   {
     id: 2,
-    name: "AI & Robotics Summit 2025",
-    date: "August 20, 2025",
-    status: "completed",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "Exploring the future of artificial intelligence and robotics",
-    hasDetailsPage: true,
-  },
-  {
-    id: 3,
-    name: "Innovation Expo 2025",
-    date: "September 10, 2025",
-    status: "completed",
-    logo: "/placeholder.svg?height=80&width=80",
-    description: "Showcase of cutting-edge technological innovations",
-    hasDetailsPage: true,
-  },
-  {
-    id: 4,
     name: "RoboWars 2024",
     date: "March 15, 2024",
     status: "completed",
@@ -67,7 +49,7 @@ const allEvents = [
     },
   },
   {
-    id: 5,
+    id: 3,
     name: "Tech Innovation Summit 2023",
     date: "November 20, 2023",
     status: "completed",
@@ -94,7 +76,7 @@ const allEvents = [
     },
   },
   {
-    id: 6,
+    id: 4,
     name: "Mechatronics Workshop 2023",
     date: "September 10, 2023",
     status: "completed",
@@ -121,7 +103,7 @@ const allEvents = [
     },
   },
   {
-    id: 7,
+    id: 5,
     name: "Drone Racing Championship 2023",
     date: "August 5, 2023",
     status: "completed",
@@ -148,7 +130,7 @@ const allEvents = [
     },
   },
   {
-    id: 8,
+    id: 6,
     name: "IoT Solutions Hackathon 2023",
     date: "June 18, 2023",
     status: "completed",
