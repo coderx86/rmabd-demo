@@ -19,8 +19,8 @@ export function AboutEvent() {
 
             <StaggerContainer staggerDelay={0.15}>
               <p className="text-muted-foreground leading-relaxed">
-                Techday 2025 is the most anticipated robotics competition of the year, bringing together brilliant
-                minds from universities across the country. This event showcases the pinnacle of engineering excellence,
+                Techday 2025 is the most anticipated robotics competition of the year, bringing together brilliant minds
+                from universities across the country. This event showcases the pinnacle of engineering excellence,
                 creativity, and competitive spirit in the field of robotics.
               </p>
               <p className="text-muted-foreground leading-relaxed">
@@ -31,36 +31,36 @@ export function AboutEvent() {
             </StaggerContainer>
 
             <AnimatedSection direction="up" delay={0.4}>
-              <div className="grid grid-cols-2 gap-8 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-4">
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="text-center p-6 bg-card rounded-lg card-shadow"
+                  className="text-center p-4 sm:p-6 bg-card rounded-lg card-shadow"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="text-3xl font-bold text-primary mb-3"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-3 break-words"
                   >
                     ৳50,000
                   </motion.div>
-                  <div className="text-muted-foreground">Total Prize Money</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Total Prize Money</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="text-center p-6 bg-card rounded-lg card-shadow"
+                  className="text-center p-4 sm:p-6 bg-card rounded-lg card-shadow"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
-                    className="text-3xl font-bold text-primary mb-3"
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-3"
                   >
                     100+
                   </motion.div>
-                  <div className="text-muted-foreground">Expected Teams</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Expected Teams</div>
                 </motion.div>
               </div>
             </AnimatedSection>
