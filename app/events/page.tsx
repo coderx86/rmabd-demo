@@ -18,13 +18,21 @@ export default function EventsPage() {
         <Navbar />
         <main className="overflow-x-hidden">
           <EventHeroSection />
-          <AboutEvent />
-          <DateLocation />
+          <div id="event-about">
+            <AboutEvent />
+        </div>
+        <DateLocation />
+        <div id="event-segments">
           <EventSegments />
+        </div>
+        <EventGallery />
+        <div id="event-sponsors">
           <SponsorsPartners />
-          <CampusAmbassador />
-          <EventGallery />
-          <ContactInfo />
+        </div>
+        <CampusAmbassador />
+      <div id="event-contact">
+        <ContactInfo />
+          </div>
         </main>
         <Footer />
         <ScrollToTop />

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export function AboutEvent() {
   return (
-    <section id="about" className="py-24 bg-cream dark:bg-background">
+    <section id="about-event" className="py-24 bg-cream dark:bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}

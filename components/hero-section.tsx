@@ -11,7 +11,7 @@ export function HeroSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.3,
-        delayChildren: 0.2,
+        delayChildren: 4.2,
       },
     },
   }

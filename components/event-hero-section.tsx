@@ -50,7 +50,7 @@ export function EventHeroSection() {
         <motion.h1
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 3.8 }}
           className="mb-4 text-white"
         >
           Techday <span className="text-accent">2025</span>
@@ -58,7 +58,7 @@ export function EventHeroSection() {
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          transition={{ duration: 0.6, delay: 4.2 }}
           className="text-xl md:text-2xl text-white/90"
         >
           The Ultimate Robotics Competition
