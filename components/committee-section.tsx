@@ -1,13 +1,25 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Facebook, Linkedin, Mail, ChevronLeft, ChevronRight } from "lucide-react"
-import { AnimatedSection } from "@/components/animated-section"
-import { motion } from "framer-motion"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
+import { useState, useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Facebook,
+  Linkedin,
+  Mail,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { AnimatedSection } from "@/components/animated-section";
+import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const allCommitteeMembers = [
   {
@@ -58,10 +70,10 @@ const allCommitteeMembers = [
     designation: "Competition Manager",
     image: "/placeholder.svg?height=300&width=300",
   },
-]
+];
 
 export function CommitteeSection() {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
 
   const plugin = useRef(
     Autoplay({
@@ -69,20 +81,24 @@ export function CommitteeSection() {
       stopOnInteraction: false,
       stopOnMouseEnter: true,
       stopOnLastSnap: false,
-    }),
-  )
+    })
+  );
 
   const handleMouseEnter = () => {
-    setIsHovered(true)
-    plugin.current.stop()
-  }
+    setIsHovered(true);
+    plugin.current.stop();
+  };
 
   const handleMouseLeave = () => {
-    setIsHovered(false)
-    plugin.current.play()
-  }
+    setIsHovered(false);
+    plugin.current.play();
+  };
 
-  const CommitteeCard = ({ member }: { member: (typeof allCommitteeMembers)[0] }) => (
+  const CommitteeCard = ({
+    member,
+  }: {
+    member: (typeof allCommitteeMembers)[0];
+  }) => (
     <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full mx-auto max-w-sm">
       <CardContent className="p-8 text-center">
         <div className="mb-8">
@@ -103,11 +119,17 @@ export function CommitteeSection() {
             </div>
           </motion.div>
         </div>
-        <h3 className="text-xl font-semibold text-foreground mb-3">{member.name}</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-3">
+          {member.name}
+        </h3>
         <p className="text-muted-foreground mb-8">{member.designation}</p>
         <div className="flex justify-center space-x-4">
           {[Mail, Linkedin, Facebook].map((Icon, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.1, rotate: 10 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1, rotate: 10 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="icon"
                 variant="outline"
@@ -120,7 +142,7 @@ export function CommitteeSection() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 
   return (
     <section id="team" className="py-24 bg-cream dark:bg-slate-900">
@@ -135,7 +157,11 @@ export function CommitteeSection() {
         </AnimatedSection>
 
         {/* Carousel for All Screen Sizes */}
-        <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div
+          className="relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Carousel
             plugins={[plugin.current]}
             opts={{
@@ -147,8 +173,14 @@ export function CommitteeSection() {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {allCommitteeMembers.map((member) => (
-                <CarouselItem key={member.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                  <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ duration: 0.3 }}>
+                <CarouselItem
+                  key={member.id}
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <CommitteeCard member={member} />
                   </motion.div>
                 </CarouselItem>
@@ -165,7 +197,7 @@ export function CommitteeSection() {
           </Carousel>
 
           {/* Auto-play Status Indicator */}
-          <div className="flex justify-center mt-6 space-x-2 items-center">
+          {/* <div className="flex justify-center mt-6 space-x-2 items-center">
             <div className="flex space-x-2">
               {Array.from({ length: Math.ceil(allCommitteeMembers.length / 3) }).map((_, index) => (
                 <div
@@ -182,9 +214,9 @@ export function CommitteeSection() {
               />
               <span className="text-xs text-muted-foreground">{isHovered ? "Paused" : "Auto-play"}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
-  )
+  );
 }

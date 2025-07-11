@@ -1,13 +1,27 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Facebook, Linkedin, Mail, ExternalLink, GraduationCap, ChevronLeft, ChevronRight } from "lucide-react"
-import { AnimatedSection } from "@/components/animated-section"
-import { motion } from "framer-motion"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
+import { useState, useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Facebook,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  GraduationCap,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { AnimatedSection } from "@/components/animated-section";
+import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const allAlumni = [
   {
@@ -90,10 +104,10 @@ const allAlumni = [
     graduationYear: "2020",
     image: "/placeholder.svg?height=300&width=300",
   },
-]
+];
 
 export function AlumniSection() {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
 
   const plugin = useRef(
     Autoplay({
@@ -101,18 +115,18 @@ export function AlumniSection() {
       stopOnInteraction: false,
       stopOnMouseEnter: true,
       stopOnLastSnap: false,
-    }),
-  )
+    })
+  );
 
   const handleMouseEnter = () => {
-    setIsHovered(true)
-    plugin.current.stop()
-  }
+    setIsHovered(true);
+    plugin.current.stop();
+  };
 
   const handleMouseLeave = () => {
-    setIsHovered(false)
-    plugin.current.play()
-  }
+    setIsHovered(false);
+    plugin.current.play();
+  };
 
   const getGraduationBadge = (year: string) => {
     return (
@@ -178,7 +192,9 @@ export function AlumniSection() {
               <span className="text-xs font-medium text-slate-400 dark:text-slate-600 uppercase tracking-wider">
                 Class of
               </span>
-              <span className="text-sm font-bold text-white dark:text-slate-900 tracking-wide">{year}</span>
+              <span className="text-sm font-bold text-white dark:text-slate-900 tracking-wide">
+                {year}
+              </span>
             </div>
           </div>
 
@@ -218,13 +234,15 @@ export function AlumniSection() {
           className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-sm"
         />
       </motion.div>
-    )
-  }
+    );
+  };
 
   const AlumniCard = ({ alumni }: { alumni: (typeof allAlumni)[0] }) => (
     <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full relative overflow-hidden mx-auto max-w-sm">
       {/* Graduation Year Badge - Positioned with better spacing */}
-      <div className="absolute top-4 right-4 z-10">{getGraduationBadge(alumni.graduationYear)}</div>
+      <div className="absolute top-4 right-4 z-10">
+        {getGraduationBadge(alumni.graduationYear)}
+      </div>
 
       <CardContent className="p-8 text-center">
         <div className="mb-8 pt-4">
@@ -258,10 +276,15 @@ export function AlumniSection() {
           </motion.div>
         </div>
 
-        <h3 className="text-xl font-semibold text-foreground mb-2">{alumni.name}</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-2">
+          {alumni.name}
+        </h3>
         <p className="text-primary font-medium mb-1">{alumni.designation}</p>
         <div className="flex items-center justify-center space-x-2 mb-6">
-          <motion.div whileHover={{ scale: 1.1 }} className="flex items-center space-x-1 text-muted-foreground">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="flex items-center space-x-1 text-muted-foreground"
+          >
             <ExternalLink className="h-3 w-3" />
             <span className="text-sm font-medium">{alumni.company}</span>
           </motion.div>
@@ -269,7 +292,11 @@ export function AlumniSection() {
 
         <div className="flex justify-center space-x-4">
           {[Mail, Linkedin, Facebook].map((Icon, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="icon"
                 variant="outline"
@@ -282,7 +309,7 @@ export function AlumniSection() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 
   return (
     <section className="py-24 bg-background">
@@ -292,12 +319,17 @@ export function AlumniSection() {
             Our <span className="text-primary">Alumni</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Proud graduates making their mark in the world of technology and innovation
+            Proud graduates making their mark in the world of technology and
+            innovation
           </p>
         </AnimatedSection>
 
         {/* Carousel for All Screen Sizes */}
-        <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div
+          className="relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Carousel
             plugins={[plugin.current]}
             opts={{
@@ -309,8 +341,14 @@ export function AlumniSection() {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {allAlumni.map((alumni) => (
-                <CarouselItem key={alumni.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                  <motion.div whileHover={{ y: -8, scale: 1.02 }} transition={{ duration: 0.3 }}>
+                <CarouselItem
+                  key={alumni.id}
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <AlumniCard alumni={alumni} />
                   </motion.div>
                 </CarouselItem>
@@ -327,7 +365,7 @@ export function AlumniSection() {
           </Carousel>
 
           {/* Auto-play Status Indicator */}
-          <div className="flex justify-center mt-6 space-x-2 items-center">
+          {/* <div className="flex justify-center mt-6 space-x-2 items-center">
             <div className="flex space-x-2">
               {Array.from({ length: Math.ceil(allAlumni.length / 3) }).map((_, index) => (
                 <div
@@ -344,7 +382,7 @@ export function AlumniSection() {
               />
               <span className="text-xs text-muted-foreground">{isHovered ? "Paused" : "Auto-play"}</span>
             </div>
-          </div>
+          </div>*/}
         </div>
 
         {/* Alumni Stats */}
@@ -401,5 +439,5 @@ export function AlumniSection() {
         </AnimatedSection>
       </div>
     </section>
-  )
+  );
 }
