@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface LoadingScreenProps {
-  onLoadingComplete: () => void
+  onLoadingComplete: () => void;
 }
 
 export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(timer)
-          setTimeout(onLoadingComplete, 500) // Small delay for smooth transition
-          return 100
+          clearInterval(timer);
+          setTimeout(onLoadingComplete, 500); // Small delay for smooth transition
+          return 100;
         }
-        return prev + 2 // Increment by 2% every 60ms (3 seconds total)
-      })
-    }, 60)
+        return prev + 2; // Increment by 2% every 60ms (3 seconds total)
+      });
+    }, 60);
 
-    return () => clearInterval(timer)
-  }, [onLoadingComplete])
+    return () => clearInterval(timer);
+  }, [onLoadingComplete]);
 
   return (
     <AnimatePresence>
@@ -34,7 +34,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
         className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-primary/20 via-background to-accent/20 overflow-hidden"
       >
         {/* Animated Background Circuit Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        {/* <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
               <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -45,7 +45,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
             </defs>
             <rect width="100%" height="100%" fill="url(#circuit)" />
           </svg>
-        </div>
+        </div> */}
 
         {/* Main Loading Content */}
         <div className="relative z-10 text-center">
@@ -53,7 +53,11 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
           <div className="relative mb-8">
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              transition={{
+                duration: 3,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "linear",
+              }}
               className="absolute -top-4 -left-4 w-16 h-16 text-primary/60"
             >
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -63,7 +67,11 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
 
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              transition={{
+                duration: 2,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "linear",
+              }}
               className="absolute -top-2 -right-6 w-12 h-12 text-accent/60"
             >
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -207,5 +215,5 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
         ))}
       </motion.div>
     </AnimatePresence>
-  )
+  );
 }
