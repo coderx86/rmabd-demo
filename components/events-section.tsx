@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { StaggerContainer } from "@/components/stagger-container";
+import { ImageCarousel } from "@/components/image-carousel";
 import { motion } from "framer-motion";
 
 const allEvents = [
@@ -682,14 +683,14 @@ export function EventsSection() {
                   <DialogTitle className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight flex-1 min-w-0">
                     {selectedEvent.name}
                   </DialogTitle>
-                  <div className="flex-shrink-0 sm:mt-1">
+                  {/* <div className="flex-shrink-0 sm:mt-1">
                     <Badge
                       variant="secondary"
                       className="bg-gray-500 text-white text-xs sm:text-sm whitespace-nowrap"
                     >
                       Completed
                     </Badge>
-                  </div>
+                  </div> */}
                 </div>
               </DialogHeader>
 
@@ -717,7 +718,7 @@ export function EventsSection() {
                 </div>
 
                 {/* Event Info Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-5 w-5 text-primary" />
@@ -765,20 +766,20 @@ export function EventsSection() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Prize Pool */}
-                <div className="bg-primary/10 p-4 rounded-lg text-center">
+                {/* <div className="bg-primary/10 p-4 rounded-lg text-center">
                   <h3 className="text-lg font-semibold text-primary mb-2">
                     Total Prize Pool
                   </h3>
                   <p className="text-2xl font-bold text-foreground">
                     {selectedEvent.details.prizePool}
                   </p>
-                </div>
+                </div> */}
 
                 {/* Sponsors Section */}
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
                     <Building2 className="h-5 w-5 text-primary mr-2" />
                     Event Sponsors & Partners
@@ -799,10 +800,10 @@ export function EventsSection() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Event Highlights */}
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-semibold text-foreground mb-4">
                     Event Highlights
                   </h3>
@@ -819,14 +820,14 @@ export function EventsSection() {
                       )
                     )}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Gallery Section */}
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-4">
                     Event Gallery
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {selectedEvent.details.gallery.map((item, index) => (
                       <div
                         key={index}
@@ -842,7 +843,8 @@ export function EventsSection() {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
+                  <ImageCarousel images={selectedEvent.details.gallery} />
                 </div>
               </div>
             </>
