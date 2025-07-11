@@ -1,16 +1,15 @@
-import { Navbar } from "@/components/navbar"
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { EventsSection } from "@/components/events-section"
-import { AlumniSection } from "@/components/alumni-section"
-import { CommitteeSection } from "@/components/committee-section"
-import { ModeratorSection } from "@/components/moderator-section"
-import { AdvisorSection } from "@/components/advisor-section"
-import { Gallery } from "@/components/gallery"
-import { ContactInfo } from "@/components/contact-info"
-import { Footer } from "@/components/footer"
-import { ScrollToTop } from "@/components/scroll-to-top"
-import { PageWrapper } from "@/components/page-wrapper"
+import { Navbar } from "@/components/navbar";
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { EventsSection } from "@/components/events-section";
+import { AlumniSection } from "@/components/alumni-section";
+import { CommitteeSection } from "@/components/committee-section";
+import { AdvisorAndModeratorSection } from "@/components/advisor&moderator-section";
+import { Gallery } from "@/components/gallery";
+import { ContactInfo } from "@/components/contact-info";
+import { Footer } from "@/components/footer";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { PageWrapper } from "@/components/page-wrapper";
 
 export default function Home() {
   return (
@@ -21,8 +20,7 @@ export default function Home() {
           <HeroSection />
           <EventsSection />
           <AboutSection />
-          <AdvisorSection />
-          <ModeratorSection />
+          <AdvisorAndModeratorSection />
           <CommitteeSection />
           <AlumniSection />
           <Gallery />
@@ -32,5 +30,5 @@ export default function Home() {
         <ScrollToTop />
       </div>
     </PageWrapper>
-  )
+  );
 }
