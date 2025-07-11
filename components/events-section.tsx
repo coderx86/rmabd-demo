@@ -217,7 +217,8 @@ export function EventsSection() {
     Record<number, boolean>
   >({}); // State to control visibility of details
   const [showAllEvents, setShowAllEvents] = useState(false);
-  const lastVisibleEventRef = useRef<HTMLDivElement>(null);
+  // Renamed this ref to be more descriptive of its primary use
+  const showMoreButtonRef = useRef<HTMLDivElement>(null);
 
   // Ref map to store references to each event card
   const eventRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
@@ -266,7 +267,7 @@ export function EventsSection() {
         setTimeout(() => {
           eventRefs.current.get(event.id)?.scrollIntoView({
             behavior: "smooth",
-            block: "start", // Scroll to the top of the card
+            block: "start", // Scroll to the top of the event card
           });
         }, 300); // Small delay to allow collapse animation to start
       }
@@ -366,7 +367,10 @@ export function EventsSection() {
     // If we're hiding events (showing less), scroll to the last visible event
     if (!newShowAllState) {
       setTimeout(() => {
-        lastVisibleEventRef.current?.scrollIntoView({
+        // This ref is now specifically for the "Show More/Less" button
+        // The original `lastVisibleEventRef` was used for scrolling to the 3rd event when collapsing the main list.
+        // Since the user wants to scroll to the "Show More/Less" button, we'll use `showMoreButtonRef` here.
+        showMoreButtonRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "center",
         });
@@ -766,6 +770,7 @@ export function EventsSection() {
                 variant="outline"
                 size="lg"
                 className="px-8 py-3 font-medium bg-transparent hover:bg-primary hover:text-primary-foreground border-2"
+                ref={showMoreButtonRef} // Assign the ref here
               >
                 <span className="flex items-center space-x-2">
                   <span>
