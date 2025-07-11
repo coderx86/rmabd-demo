@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useState, useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Calendar,
   ArrowRight,
@@ -16,10 +21,10 @@ import {
   ChevronDown,
   ChevronUp,
   Building2,
-} from "lucide-react"
-import { AnimatedSection } from "@/components/animated-section"
-import { StaggerContainer } from "@/components/stagger-container"
-import { motion } from "framer-motion"
+} from "lucide-react";
+import { AnimatedSection } from "@/components/animated-section";
+import { StaggerContainer } from "@/components/stagger-container";
+import { motion } from "framer-motion";
 
 const allEvents = [
   {
@@ -51,7 +56,11 @@ const allEvents = [
         { name: "Innovation Labs", type: "Gold Sponsor", logo: "🥇" },
         { name: "RoboTech Solutions", type: "Silver Sponsor", logo: "🥈" },
         { name: "Engineering Hub", type: "Bronze Sponsor", logo: "🥉" },
-        { name: "CUET Alumni Association", type: "Supporting Partner", logo: "🎓" },
+        {
+          name: "CUET Alumni Association",
+          type: "Supporting Partner",
+          logo: "🎓",
+        },
       ],
       highlights: [
         "Record-breaking 52 teams participated",
@@ -206,42 +215,44 @@ const allEvents = [
       ],
     },
   },
-]
+];
 
 export function EventsSection() {
-  const [selectedEvent, setSelectedEvent] = useState<(typeof allEvents)[0] | null>(null)
-  const [showAllEvents, setShowAllEvents] = useState(false)
-  const lastVisibleEventRef = useRef<HTMLDivElement>(null)
+  const [selectedEvent, setSelectedEvent] = useState<
+    (typeof allEvents)[0] | null
+  >(null);
+  const [showAllEvents, setShowAllEvents] = useState(false);
+  const lastVisibleEventRef = useRef<HTMLDivElement>(null);
 
   // Sort events to prioritize upcoming events
   const sortedEvents = [...allEvents].sort((a, b) => {
     // First, sort by status (upcoming first)
-    if (a.status === "upcoming" && b.status === "completed") return -1
-    if (a.status === "completed" && b.status === "upcoming") return 1
+    if (a.status === "upcoming" && b.status === "completed") return -1;
+    if (a.status === "completed" && b.status === "upcoming") return 1;
 
     // Then sort by date (newest first for upcoming, most recent first for completed)
-    const dateA = new Date(a.date)
-    const dateB = new Date(b.date)
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
 
     if (a.status === "upcoming") {
-      return dateA.getTime() - dateB.getTime() // Earliest upcoming first
+      return dateA.getTime() - dateB.getTime(); // Earliest upcoming first
     } else {
-      return dateB.getTime() - dateA.getTime() // Most recent completed first
+      return dateB.getTime() - dateA.getTime(); // Most recent completed first
     }
-  })
+  });
 
   // Show only first 3 events unless "Show More" is clicked
-  const eventsToShow = showAllEvents ? sortedEvents : sortedEvents.slice(0, 3)
+  const eventsToShow = showAllEvents ? sortedEvents : sortedEvents.slice(0, 3);
 
   const handleEventClick = (event: (typeof allEvents)[0]) => {
     if (event.hasDetailsPage) {
       // Navigate to events page for upcoming events
-      window.location.href = "/events"
+      window.location.href = "/events";
     } else {
       // Open modal for completed events
-      setSelectedEvent(event)
+      setSelectedEvent(event);
     }
-  }
+  };
 
   const getStatusBadge = (status: string) => {
     if (status === "upcoming") {
@@ -274,7 +285,11 @@ export function EventsSection() {
             <div className="flex items-center space-x-2">
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                transition={{
+                  duration: 3,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear",
+                }}
               >
                 <Sparkles className="h-4 w-4" />
               </motion.div>
@@ -297,7 +312,7 @@ export function EventsSection() {
             />
           </motion.div>
         </motion.div>
-      )
+      );
     } else {
       return (
         <motion.div
@@ -307,7 +322,7 @@ export function EventsSection() {
           className="relative"
         >
           {/* Main badge */}
-          <motion.div
+          {/* <motion.div
             whileHover={{ scale: 1.05, rotate: -2 }}
             className="relative bg-gradient-to-r from-slate-600 via-gray-600 to-slate-700 text-white px-4 py-2 rounded-full shadow-lg border border-slate-400/30 backdrop-blur-sm"
           >
@@ -328,24 +343,24 @@ export function EventsSection() {
               <span className="font-semibold text-sm tracking-wide">COMPLETED</span>
             </div>
 
-            {/* Subtle pattern overlay */}
+            {/* Subtle pattern overlay 
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full opacity-50" />
-          </motion.div>
+          </motion.div> */}
 
           {/* Decorative corner accent */}
-          <motion.div
+          {/* <motion.div
             animate={{ opacity: [0.3, 0.7, 0.3] }}
             transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
             className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full shadow-sm"
-          />
+          /> */}
         </motion.div>
-      )
+      );
     }
-  }
+  };
 
   const handleShowMoreToggle = () => {
-    const newShowAllState = !showAllEvents
-    setShowAllEvents(newShowAllState)
+    const newShowAllState = !showAllEvents;
+    setShowAllEvents(newShowAllState);
 
     // If we're hiding events (showing less), scroll to the last visible event
     if (!newShowAllState) {
@@ -353,10 +368,10 @@ export function EventsSection() {
         lastVisibleEventRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "center",
-        })
-      }, 100)
+        });
+      }, 100);
     }
-  }
+  };
 
   return (
     <section className="py-24 bg-background w-full overflow-x-hidden">
@@ -366,7 +381,8 @@ export function EventsSection() {
             <span className="text-primary">Events</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join us for exciting events, competitions, and learning opportunities
+            Join us for exciting events, competitions, and learning
+            opportunities
           </p>
         </AnimatedSection>
 
@@ -407,7 +423,9 @@ export function EventsSection() {
                         <div className="block lg:hidden">
                           <div className="text-center space-y-4 pt-8 pb-4">
                             {/* Status Badge - Centered on mobile */}
-                            <div className="flex justify-center mb-4">{getStatusBadge(event.status)}</div>
+                            <div className="flex justify-center mb-4">
+                              {getStatusBadge(event.status)}
+                            </div>
 
                             {/* Event Logo */}
                             <motion.div
@@ -424,12 +442,19 @@ export function EventsSection() {
                                 <Calendar className="h-4 w-4 text-emerald-500" />
                                 <span>{event.date}</span>
                               </div>
-                              <h3 className="text-xl font-semibold text-foreground mb-2">{event.name}</h3>
-                              <p className="text-muted-foreground text-sm px-4">{event.description}</p>
+                              <h3 className="text-xl font-semibold text-foreground mb-2">
+                                {event.name}
+                              </h3>
+                              <p className="text-muted-foreground text-sm px-4">
+                                {event.description}
+                              </p>
                             </div>
 
                             {/* Action Button */}
-                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <motion.div
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
                               <Button
                                 onClick={() => handleEventClick(event)}
                                 className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg hover:shadow-xl w-full max-w-xs"
@@ -464,18 +489,27 @@ export function EventsSection() {
                                   <Calendar className="h-5 w-5 text-emerald-500" />
                                   <span>{event.date}</span>
                                 </div>
-                                <h3 className="text-2xl font-semibold text-foreground mb-2 truncate">{event.name}</h3>
-                                <p className="text-muted-foreground">{event.description}</p>
+                                <h3 className="text-2xl font-semibold text-foreground mb-2 truncate">
+                                  {event.name}
+                                </h3>
+                                <p className="text-muted-foreground">
+                                  {event.description}
+                                </p>
                               </div>
                             </div>
 
                             {/* Right side with Status Badge and Button */}
                             <div className="flex flex-col items-end space-y-4 flex-shrink-0 min-w-[200px]">
                               {/* Status Badge */}
-                              <div className="self-end">{getStatusBadge(event.status)}</div>
+                              <div className="self-end">
+                                {getStatusBadge(event.status)}
+                              </div>
 
                               {/* Action Button */}
-                              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                              <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
                                 <Button
                                   onClick={() => handleEventClick(event)}
                                   className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg hover:shadow-xl px-6 py-3 font-medium whitespace-nowrap"
@@ -500,7 +534,9 @@ export function EventsSection() {
                     <div className="block lg:hidden">
                       <div className="text-center space-y-4 pt-8 pb-4">
                         {/* Status Badge - Centered on mobile */}
-                        <div className="flex justify-center mb-4">{getStatusBadge(event.status)}</div>
+                        <div className="flex justify-center mb-4">
+                          {getStatusBadge(event.status)}
+                        </div>
 
                         {/* Event Logo */}
                         <motion.div
@@ -517,12 +553,19 @@ export function EventsSection() {
                             <Calendar className="h-4 w-4 text-primary" />
                             <span>{event.date}</span>
                           </div>
-                          <h3 className="text-xl font-semibold text-foreground mb-2">{event.name}</h3>
-                          <p className="text-muted-foreground text-sm px-4">{event.description}</p>
+                          <h3 className="text-xl font-semibold text-foreground mb-2">
+                            {event.name}
+                          </h3>
+                          <p className="text-muted-foreground text-sm px-4">
+                            {event.description}
+                          </p>
                         </div>
 
                         {/* Action Button */}
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
                           <Button
                             onClick={() => handleEventClick(event)}
                             className="group-hover:bg-accent w-full max-w-xs"
@@ -557,18 +600,27 @@ export function EventsSection() {
                               <Calendar className="h-5 w-5 text-primary" />
                               <span>{event.date}</span>
                             </div>
-                            <h3 className="text-2xl font-semibold text-foreground mb-2 truncate">{event.name}</h3>
-                            <p className="text-muted-foreground">{event.description}</p>
+                            <h3 className="text-2xl font-semibold text-foreground mb-2 truncate">
+                              {event.name}
+                            </h3>
+                            <p className="text-muted-foreground">
+                              {event.description}
+                            </p>
                           </div>
                         </div>
 
                         {/* Right side with Status Badge and Button */}
                         <div className="flex flex-col items-end space-y-4 flex-shrink-0 min-w-[200px]">
                           {/* Status Badge */}
-                          <div className="self-end">{getStatusBadge(event.status)}</div>
+                          <div className="self-end">
+                            {getStatusBadge(event.status)}
+                          </div>
 
                           {/* Action Button */}
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
                             <Button
                               onClick={() => handleEventClick(event)}
                               className="group-hover:bg-accent px-6 py-3 font-medium whitespace-nowrap"
@@ -600,8 +652,16 @@ export function EventsSection() {
                 className="px-8 py-3 font-medium bg-transparent hover:bg-primary hover:text-primary-foreground border-2"
               >
                 <span className="flex items-center space-x-2">
-                  <span>{showAllEvents ? `Show Less Events` : `Show More Events (${allEvents.length - 3} more)`}</span>
-                  {showAllEvents ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  <span>
+                    {showAllEvents
+                      ? `Show Less Events`
+                      : `Show More Events (${allEvents.length - 3} more)`}
+                  </span>
+                  {showAllEvents ? (
+                    <ChevronUp className="h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4" />
+                  )}
                 </span>
               </Button>
             </motion.div>
@@ -610,7 +670,10 @@ export function EventsSection() {
       </div>
 
       {/* Event Details Modal for Completed Events */}
-      <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>
+      <Dialog
+        open={!!selectedEvent}
+        onOpenChange={() => setSelectedEvent(null)}
+      >
         <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-4xl max-h-[95vh] overflow-y-auto p-0">
           {selectedEvent && selectedEvent.details && (
             <>
@@ -620,7 +683,10 @@ export function EventsSection() {
                     {selectedEvent.name}
                   </DialogTitle>
                   <div className="flex-shrink-0 sm:mt-1">
-                    <Badge variant="secondary" className="bg-gray-500 text-white text-xs sm:text-sm whitespace-nowrap">
+                    <Badge
+                      variant="secondary"
+                      className="bg-gray-500 text-white text-xs sm:text-sm whitespace-nowrap"
+                    >
                       Completed
                     </Badge>
                   </div>
@@ -634,14 +700,20 @@ export function EventsSection() {
                     <div className="w-20 h-20 bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-3xl">🏆</span>
                     </div>
-                    <h3 className="text-lg sm:text-2xl font-bold text-foreground px-4">{selectedEvent.name}</h3>
+                    <h3 className="text-lg sm:text-2xl font-bold text-foreground px-4">
+                      {selectedEvent.name}
+                    </h3>
                   </div>
                 </div>
 
                 {/* Event Description */}
                 <div className="bg-muted/50 p-4 sm:p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-foreground mb-3">About This Event</h3>
-                  <p className="text-muted-foreground leading-relaxed">{selectedEvent.details.description}</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    About This Event
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {selectedEvent.details.description}
+                  </p>
                 </div>
 
                 {/* Event Info Grid */}
@@ -651,15 +723,21 @@ export function EventsSection() {
                       <Calendar className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-semibold text-foreground">Date</p>
-                        <p className="text-muted-foreground">{selectedEvent.date}</p>
+                        <p className="text-muted-foreground">
+                          {selectedEvent.date}
+                        </p>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-3">
                       <MapPin className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="font-semibold text-foreground">Location</p>
-                        <p className="text-muted-foreground">{selectedEvent.details.location}</p>
+                        <p className="font-semibold text-foreground">
+                          Location
+                        </p>
+                        <p className="text-muted-foreground">
+                          {selectedEvent.details.location}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -668,8 +746,12 @@ export function EventsSection() {
                     <div className="flex items-center space-x-3">
                       <Users className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="font-semibold text-foreground">Participants</p>
-                        <p className="text-muted-foreground">{selectedEvent.details.participants}</p>
+                        <p className="font-semibold text-foreground">
+                          Participants
+                        </p>
+                        <p className="text-muted-foreground">
+                          {selectedEvent.details.participants}
+                        </p>
                       </div>
                     </div>
 
@@ -677,7 +759,9 @@ export function EventsSection() {
                       <Trophy className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-semibold text-foreground">Winner</p>
-                        <p className="text-muted-foreground">{selectedEvent.details.winner}</p>
+                        <p className="text-muted-foreground">
+                          {selectedEvent.details.winner}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -685,8 +769,12 @@ export function EventsSection() {
 
                 {/* Prize Pool */}
                 <div className="bg-primary/10 p-4 rounded-lg text-center">
-                  <h3 className="text-lg font-semibold text-primary mb-2">Total Prize Pool</h3>
-                  <p className="text-2xl font-bold text-foreground">{selectedEvent.details.prizePool}</p>
+                  <h3 className="text-lg font-semibold text-primary mb-2">
+                    Total Prize Pool
+                  </h3>
+                  <p className="text-2xl font-bold text-foreground">
+                    {selectedEvent.details.prizePool}
+                  </p>
                 </div>
 
                 {/* Sponsors Section */}
@@ -702,8 +790,12 @@ export function EventsSection() {
                         className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-md transition-shadow"
                       >
                         <div className="text-2xl mb-2">{sponsor.logo}</div>
-                        <h4 className="font-semibold text-foreground text-sm mb-1">{sponsor.name}</h4>
-                        <p className="text-xs text-muted-foreground">{sponsor.type}</p>
+                        <h4 className="font-semibold text-foreground text-sm mb-1">
+                          {sponsor.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">
+                          {sponsor.type}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -711,20 +803,29 @@ export function EventsSection() {
 
                 {/* Event Highlights */}
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Event Highlights</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Event Highlights
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {selectedEvent.details.highlights.map((highlight, index) => (
-                      <div key={index} className="flex items-start space-x-3 p-3 bg-muted rounded-lg">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-foreground">{highlight}</p>
-                      </div>
-                    ))}
+                    {selectedEvent.details.highlights.map(
+                      (highlight, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start space-x-3 p-3 bg-muted rounded-lg"
+                        >
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-sm text-foreground">{highlight}</p>
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
 
                 {/* Gallery Section */}
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Event Gallery</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    Event Gallery
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {selectedEvent.details.gallery.map((item, index) => (
                       <div
@@ -735,7 +836,9 @@ export function EventsSection() {
                           <div className="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-2">
                             <span className="text-lg">📸</span>
                           </div>
-                          <p className="text-xs text-foreground text-center">{item}</p>
+                          <p className="text-xs text-foreground text-center">
+                            {item}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -747,5 +850,5 @@ export function EventsSection() {
         </DialogContent>
       </Dialog>
     </section>
-  )
+  );
 }
