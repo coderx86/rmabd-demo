@@ -240,9 +240,9 @@ export function AlumniSection() {
   const AlumniCard = ({ alumni }: { alumni: (typeof allAlumni)[0] }) => (
     <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full relative overflow-hidden mx-auto max-w-sm">
       {/* Graduation Year Badge - Positioned with better spacing */}
-      <div className="absolute top-4 right-4 z-10">
+      {/* <div className="absolute top-4 right-4 z-10">
         {getGraduationBadge(alumni.graduationYear)}
-      </div>
+      </div> */}
 
       <CardContent className="p-8 text-center">
         <div className="mb-8 pt-4">
@@ -263,7 +263,7 @@ export function AlumniSection() {
             </div>
 
             {/* Success indicator */}
-            <motion.div
+            {/* <motion.div
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.7, 1, 0.7],
@@ -272,7 +272,7 @@ export function AlumniSection() {
               className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg"
             >
               <span className="text-white text-xs">✓</span>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
 
