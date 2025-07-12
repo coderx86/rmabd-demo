@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
@@ -15,9 +15,15 @@ export function Footer() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg font-heading">RMA</span>
+              <img
+                src="/logo/RMA logo.jpg"
+                alt="RMA Logo"
+                className="rounded-lg w-full h-full object-cover"
+              />
             </div>
-            <span className="font-bold text-lg text-foreground font-heading">RoboMechatronics Association</span>
+            <span className="font-bold text-lg text-foreground font-heading">
+              RoboMechatronics Association
+            </span>
           </div>
 
           {/* Copyright */}
@@ -29,5 +35,5 @@ export function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
