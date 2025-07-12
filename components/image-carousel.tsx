@@ -50,15 +50,13 @@ export function ImageCarousel({ images, interval = 3000 }: ImageCarouselProps) {
           className="absolute inset-0 flex items-center justify-center"
         >
           <img
-            src={`/placeholder.svg?height=200&width=400&text=${encodeURIComponent(
-              images[currentIndex]
-            )}`}
-            alt={images[currentIndex]}
-            className="w-full h-full object-cover rounded-lg"
+            src={`${images[currentIndex]}`}
+            alt={"Carousel Image " + (currentIndex + 1)}
+            className="w-full h-full object-contain rounded-lg"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4 text-white text-sm font-medium">
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4 text-white text-sm font-medium">
             {images[currentIndex]}
-          </div>
+          </div> */}
         </motion.div>
       </AnimatePresence>
 
