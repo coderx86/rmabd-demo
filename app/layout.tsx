@@ -16,6 +16,22 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
+  openGraph: {
+    title: "RoboMechatronics Association - CUET",
+    description: "Official website of RoboMechatronics Association at CUET",
+    url: "https://rma.vercel.app", // Replace with your actual domain
+    siteName: "RoboMechatronics Association",
+    images: [
+      {
+        url: "/logo/RMA logo.jpg", // Default image for previews
+        width: 1200,
+        height: 630,
+        alt: "RoboMechatronics Association Event",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
