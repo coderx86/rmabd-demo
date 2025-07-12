@@ -67,8 +67,8 @@ export function ImageCarousel({ images, interval = 3000 }: ImageCarouselProps) {
             onClick={handlePrev}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             aria-label="Previous image"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            // whileHover={{ scale: 1.1 }}
+            // whileTap={{ scale: 0.9 }}
           >
             <ChevronLeft className="h-6 w-6" />
           </motion.button>
@@ -76,8 +76,8 @@ export function ImageCarousel({ images, interval = 3000 }: ImageCarouselProps) {
             onClick={handleNext}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             aria-label="Next image"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            // whileHover={{ scale: 1.1 }}
+            // whileTap={{ scale: 0.9 }}
           >
             <ChevronRight className="h-6 w-6" />
           </motion.button>
