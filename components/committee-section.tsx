@@ -183,7 +183,7 @@ export function CommitteeSection() {
           <motion.div
             whileHover={{ rotate: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-48 h-48 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
+            className="sm:w-64 sm:h-64 w-48 h-48 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
           >
             {/* <div className="text-center">
               <motion.div
