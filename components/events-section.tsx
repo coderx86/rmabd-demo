@@ -555,11 +555,18 @@ export function EventsSection() {
                             </div>
                             {/* Event Logo */}
                             <motion.div
-                              whileHover={{ rotate: 360 }}
+                              whileHover={{ scale: 1.2 }}
                               transition={{ duration: 0.5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center mx-auto border border-emerald-300/30"
+                              className="w-64 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center mx-auto border border-emerald-300/30"
                             >
-                              <span className="text-2xl">🤖</span>
+                              <img
+                                src={
+                                  event.logo ||
+                                  "/placeholder.svg?height=300&width=300"
+                                }
+                                alt={event.name}
+                                className="w-full h-full object-cover"
+                              />
                             </motion.div>
                             {/* Event Details */}
                             <div>
@@ -598,11 +605,18 @@ export function EventsSection() {
                               {/* Event Logo */}
                               <div className="flex-shrink-0">
                                 <motion.div
-                                  whileHover={{ rotate: 360, scale: 1.1 }}
+                                  whileHover={{ scale: 1.2 }}
                                   transition={{ duration: 0.5 }}
-                                  className="w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center border border-emerald-300/30"
+                                  className="w-64 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center border border-emerald-300/30"
                                 >
-                                  <span className="text-2xl">🤖</span>
+                                  <img
+                                    src={
+                                      event.logo ||
+                                      "/placeholder.svg?height=300&width=300"
+                                    }
+                                    alt={event.name}
+                                    className="w-full h-full object-cover"
+                                  />
                                 </motion.div>
                               </div>
                               {/* Event Details */}
@@ -659,11 +673,18 @@ export function EventsSection() {
                         </div>
                         {/* Event Logo */}
                         <motion.div
-                          whileHover={{ rotate: 360 }}
+                          whileHover={{ scale: 1.2 }}
                           transition={{ duration: 0.5 }}
-                          className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto"
+                          className="w-64 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto"
                         >
-                          <span className="text-2xl">🤖</span>
+                          <img
+                            src={
+                              event.logo ||
+                              "/placeholder.svg?height=300&width=300"
+                            }
+                            alt={event.name}
+                            className="w-full h-full object-cover"
+                          />
                         </motion.div>
                         {/* Event Details */}
                         <div>
@@ -710,11 +731,18 @@ export function EventsSection() {
                           {/* Event Logo */}
                           <div className="flex-shrink-0">
                             <motion.div
-                              whileHover={{ rotate: 360, scale: 1.1 }}
+                              whileHover={{ scale: 1.2 }}
                               transition={{ duration: 0.5 }}
-                              className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center"
+                              className="w-64 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center"
                             >
-                              <span className="text-2xl">🤖</span>
+                              <img
+                                src={
+                                  event.logo ||
+                                  "/placeholder.svg?height=300&width=300"
+                                }
+                                alt={event.name}
+                                className="w-full h-full object-cover"
+                              />
                             </motion.div>
                           </div>
                           {/* Event Details */}
