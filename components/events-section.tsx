@@ -557,7 +557,7 @@ export function EventsSection() {
                             <motion.div
                               whileHover={{ scale: 1.2 }}
                               transition={{ duration: 0.5 }}
-                              className="w-64 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center mx-auto border border-emerald-300/30"
+                              className="w-48 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg flex items-center justify-center mx-auto border border-emerald-300/30"
                             >
                               <img
                                 src={
@@ -675,7 +675,7 @@ export function EventsSection() {
                         <motion.div
                           whileHover={{ scale: 1.2 }}
                           transition={{ duration: 0.5 }}
-                          className="w-64 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto"
+                          className="w-48 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto"
                         >
                           <img
                             src={
