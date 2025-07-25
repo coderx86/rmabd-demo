@@ -217,7 +217,7 @@ export function AdvisorAndModeratorSection() {
                 <CardContent className="p-8 text-center">
                   <div className="mb-8">
                     <motion.div
-                      whileHover={{ rotate: 0 }}
+                      whileHover={{ rotate: 0, scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                       className="w-64 h-64 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
                     >

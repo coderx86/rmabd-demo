@@ -26,83 +26,35 @@ import Autoplay from "embla-carousel-autoplay";
 const allAlumni = [
   {
     id: 1,
-    name: "Dr. Rashid Ahmed",
-    designation: "Senior Robotics Engineer",
-    company: "Tesla Inc.",
+    name: "Major Mohammad Naim Uddin",
+    designation: "Faculty",
+    company: "MIST",
     graduationYear: "2018",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/alumni/Major Mohammad Naim Uddin.jpeg",
   },
   {
     id: 2,
-    name: "Fatima Rahman",
-    designation: "AI Research Scientist",
-    company: "Google DeepMind",
+    name: "Humayun Kabir Raju",
+    designation: "Managing Director",
+    company: "Unipolar Automation Technologies Ltd",
     graduationYear: "2019",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/alumni/Humayun Kabir Raju.jpeg",
   },
   {
     id: 3,
-    name: "Mohammad Hassan",
-    designation: "Mechatronics Lead",
-    company: "Boston Dynamics",
+    name: "Himadri Deb",
+    designation: "SDE",
+    company: "RHD",
     graduationYear: "2017",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/alumni/Himadri Deb.jpeg",
   },
   {
     id: 4,
-    name: "Nadia Khan",
-    designation: "Automation Engineer",
-    company: "Siemens",
+    name: "Zeeshan Haque",
+    designation: "SWE",
+    company: "Ex-Google",
     graduationYear: "2020",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 5,
-    name: "Tariq Islam",
-    designation: "Robotics Consultant",
-    company: "McKinsey & Company",
-    graduationYear: "2018",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 6,
-    name: "Rima Begum",
-    designation: "Product Manager",
-    company: "Amazon Robotics",
-    graduationYear: "2019",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 7,
-    name: "Fahim Ahmed",
-    designation: "Startup Founder",
-    company: "RoboTech Solutions",
-    graduationYear: "2016",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 8,
-    name: "Zara Hassan",
-    designation: "Research Engineer",
-    company: "MIT CSAIL",
-    graduationYear: "2021",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 9,
-    name: "Omar Faruk",
-    designation: "Technical Lead",
-    company: "SpaceX",
-    graduationYear: "2017",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    id: 10,
-    name: "Sadia Ahmed",
-    designation: "Machine Learning Engineer",
-    company: "Meta AI",
-    graduationYear: "2020",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/alumni/Zeeshan Haque.jpeg",
   },
 ];
 
@@ -247,11 +199,11 @@ export function AlumniSection() {
       <CardContent className="p-8 text-center">
         <div className="mb-8 pt-4">
           <motion.div
-            whileHover={{ rotate: 5, scale: 1.05 }}
+            whileHover={{ rotate: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="w-36 h-36 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center relative"
+            className="w-64 h-64 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center relative"
           >
-            <div className="text-center">
+            {/* <div className="text-center">
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY }}
@@ -260,7 +212,12 @@ export function AlumniSection() {
                 <span className="text-xl">🎓</span>
               </motion.div>
               <span className="text-xs text-muted-foreground">Alumni</span>
-            </div>
+            </div> */}
+            <img
+              src={alumni.image || "/placeholder.svg?height=300&width=300"}
+              alt={alumni.name}
+              className="w-full h-full object-cover rounded-full"
+            />
 
             {/* Success indicator */}
             {/* <motion.div
@@ -285,7 +242,7 @@ export function AlumniSection() {
             whileHover={{ scale: 1.1 }}
             className="flex items-center space-x-1 text-muted-foreground"
           >
-            <ExternalLink className="h-3 w-3" />
+            {/* <ExternalLink className="h-3 w-3" /> */}
             <span className="text-sm font-medium">{alumni.company}</span>
           </motion.div>
         </div>
