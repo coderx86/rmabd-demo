@@ -10,55 +10,180 @@ import { motion } from "framer-motion";
 const advisorsAndModerators = [
   {
     id: 1,
-    name: "Dr. Md Rahman",
+    name: "Prof. Dr. Sajal Chandra Banik",
     designation: "Professor, ME",
+    club_designation: "Chairman",
     image: "/placeholder.svg?height=300&width=300",
     social: {
-      email: "rahman@cuet.ac.bd",
+      email: "baniksajal@cuet.ac.bd",
       linkedin: "#",
       facebook: "#",
     },
   },
   {
     id: 2,
-    name: "Dr. Fatima Ahmed",
-    designation: "Associate Professor, EEE",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Prof. Dr. Quazi Delwar Hossain",
+    designation: "Professor, EEE",
+    club_designation: "Chief Moderator",
+    image: "/advisors&moderators/Dr. Quazi Delwar Hossain sir.jpg",
     social: {
-      email: "fatima@cuet.ac.bd",
+      email: "quazi@cuet.ac.bd",
       linkedin: "#",
       facebook: "#",
     },
   },
   {
     id: 3,
-    name: "Ahmed Hassan",
-    designation: "President",
+    name: "Md. Aminul Islam",
+    designation: "Associate Professor, ME",
+    club_designation: "Moderator",
     image: "/placeholder.svg?height=300&width=300",
     social: {
-      email: "ahmed@rma.cuet.ac.bd",
+      email: "aislam@cuet.ac.bd",
       linkedin: "#",
       facebook: "#",
     },
   },
   {
     id: 4,
-    name: "Fatima Khan",
-    designation: "Vice President",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Prof. Dr. Md. Mamunur Roshid",
+    designation: "Professor, ME",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/Dr. Md. Mamunur Rashid sir(not sure).jpg",
     social: {
-      email: "fatima@rma.cuet.ac.bd",
+      email: "mamuncuet2003@cuet.ac.bd",
       linkedin: "#",
       facebook: "#",
     },
   },
   {
     id: 5,
-    name: "Rafiq Islam",
-    designation: "General Secretary",
+    name: "Monowar Wadud Hridoy",
+    designation: "Assistant Professor, MIE",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/Monowar Wadud Hridoy sir.jpg",
+    social: {
+      email: "hridoy@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 6,
+    name: "Sanjeeb Roy",
+    designation: "Lecturer, ME",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/Sanjeeb Roy sir.jpg",
+    social: {
+      email: "sanjeeb@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 7,
+    name: "Radheshyam Nath Jisu",
+    designation: "Lecturer, ME",
+    club_designation: "Moderator",
     image: "/placeholder.svg?height=300&width=300",
     social: {
-      email: "rafiq@rma.cuet.ac.bd",
+      email: "radheshyam@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 8,
+    name: "Wasif Abu Dujana",
+    designation: "Lecturer, MSE",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/Wasif Abu Dujana sir.jpg",
+    social: {
+      email: "wasif@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 9,
+    name: "Eftekhar Hossain",
+    designation: "Assistant Professor, ETE",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/Eftekhar Hossain sir.jpg",
+    social: {
+      email: "eftekhar.hossain@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 10,
+    name: "S. M. Fahim Faisal",
+    designation: "Lecturer, MIE",
+    club_designation: "Moderator",
+    image: "/advisors&moderators/S. M. Fahim Faisal sir.jpg",
+    social: {
+      email: "fahimfaisal@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 11,
+    name: "Prof. Dr. Jamal Uddin Ahamed",
+    designation: "Professor, ME",
+    club_designation: "Advisor",
+    image: "/advisors&moderators/Dr. Jamal Uddin Ahmed sir.jpg",
+    social: {
+      email: "jamal@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 12,
+    name: "Prof. Dr. Md. Sanaul Rabbi",
+    designation: "Professor, ME",
+    club_designation: "Advisor",
+    image: "/advisors&moderators/Dr. Md. Sanaul Rabbi sir.jpg",
+    social: {
+      email: "rabbi@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 13,
+    name: "Prof. Dr. Sampad Ghosh",
+    designation: "Professor, EEE",
+    club_designation: "Advisor",
+    image: "/advisors&moderators/Dr. Sampad Ghosh sir.jpg",
+    social: {
+      email: "#",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 14,
+    name: "Prof. Dr. Mizanur Rahman",
+    designation: "Professor, ME",
+    club_designation: "Advisor",
+    image: "/placeholder.svg?height=300&width=300",
+    social: {
+      email: "#",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 15,
+    name: "Nursadul Mamun",
+    designation: "Professor, ETE",
+    club_designation: "Advisor",
+    image: "/placeholder.svg?height=300&width=300",
+    social: {
+      email: "#",
       linkedin: "#",
       facebook: "#",
     },
@@ -92,11 +217,11 @@ export function AdvisorAndModeratorSection() {
                 <CardContent className="p-8 text-center">
                   <div className="mb-8">
                     <motion.div
-                      whileHover={{ rotate: 5 }}
+                      whileHover={{ rotate: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="w-36 h-36 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
+                      className="w-64 h-64 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
                     >
-                      <div className="text-center">
+                      {/* <div className="text-center">
                         <motion.div
                           animate={{ scale: [1, 1.1, 1] }}
                           transition={{
@@ -110,7 +235,15 @@ export function AdvisorAndModeratorSection() {
                         <span className="text-xs text-muted-foreground">
                           Faculty
                         </span>
-                      </div>
+                      </div> */}
+                      <img
+                        src={
+                          advisorOrModerator.image ||
+                          "/placeholder.svg?height=300&width=300"
+                        }
+                        alt={advisorOrModerator.name}
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </motion.div>
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">

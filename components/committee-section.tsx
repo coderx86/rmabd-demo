@@ -24,51 +24,129 @@ import Autoplay from "embla-carousel-autoplay";
 const allCommitteeMembers = [
   {
     id: 1,
-    name: "Sarah Ahmed",
-    designation: "Technical Lead",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Alif Haidar",
+    designation: "General Secretary",
+    image: "/committee/alif.png",
   },
   {
     id: 2,
-    name: "Karim Rahman",
-    designation: "Event Coordinator",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Md. Ashiqur Rahman Hridoy",
+    designation: "Project Secretary",
+    image: "/committee/ashiq.png",
   },
   {
     id: 3,
-    name: "Nadia Islam",
-    designation: "Public Relations",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Badhon Saha",
+    designation: "Archive Secretary",
+    image: "/committee/badhon.png",
   },
   {
     id: 4,
-    name: "Tariq Hassan",
-    designation: "Finance Secretary",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Sayma Sultana Chaity",
+    designation: "Public Relations Officer",
+    image: "/committee/chaity.png",
   },
   {
     id: 5,
-    name: "Rima Khan",
-    designation: "Workshop Coordinator",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Md Hasibur Rahman",
+    designation: "Logistics Manager",
+    image: "/committee/hasib.png",
   },
   {
     id: 6,
-    name: "Fahim Ahmed",
-    designation: "Media Manager",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Md Imtiaz Hossen",
+    designation: "Publication Secretary",
+    image: "/committee/imtiaz.png",
   },
   {
     id: 7,
-    name: "Zara Begum",
-    designation: "Research Coordinator",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Itquan Hossen",
+    designation: "Vice President(Admin)",
+    image: "/committee/itquan.png",
   },
   {
     id: 8,
-    name: "Omar Faruk",
-    designation: "Competition Manager",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Md. Ismail Hossain Maruf",
+    designation: "Organizing Secretary",
+    image: "/committee/maruf.png",
+  },
+  {
+    id: 20,
+    name: "Md.Masud Parves",
+    designation: "Strategy & Sponsorship Secretary",
+    image: "/committee/masud.png",
+  },
+  {
+    id: 21,
+    name: "Nahid Alom Nur",
+    designation: "Workshop & Seminar Secretary",
+    image: "/committee/nahid.png",
+  },
+  {
+    id: 9,
+    name: "Nilmadhab Das Partha",
+    designation: "Joint Organizing Secretary",
+    image: "/committee/partha.png",
+  },
+  {
+    id: 10,
+    name: "Prithwi Saha",
+    designation: "Social Media Strategist",
+    image: "/committee/prithwi.png",
+  },
+  {
+    id: 11,
+    name: "Mohammad Rafiq",
+    designation: "Joint General Secretary(Technical)",
+    image: "/committee/rafiq.png",
+  },
+  {
+    id: 12,
+    name: "Rakibul Islam",
+    designation: "Lab Administrator",
+    image: "/committee/rakib.png",
+  },
+  {
+    id: 13,
+    name: "Nafsheen Reza Reedeka",
+    designation: "Industry Relations Secretary",
+    image: "/committee/Reedeka.png",
+  },
+  {
+    id: 14,
+    name: "Md Sadik Imtiaz",
+    designation: "Finance Secretary",
+    image: "/committee/Sadik.png",
+  },
+  {
+    id: 15,
+    name: "Sayan Paul",
+    designation: "President",
+    image: "/committee/Sayan.png",
+  },
+  {
+    id: 16,
+    name: "Md Kamruzzaman",
+    designation: "Vice President(Technical)",
+    image: "/committee/siam.png",
+  },
+  {
+    id: 17,
+    name: "Tanzeem Tahmeed Reza",
+    designation: "Vice President(Management)",
+    image: "/committee/T T Reza.png",
+  },
+  {
+    id: 18,
+    name: "Sanjana Kabir Tanha",
+    designation: "Operations Secretary",
+    image: "/committee/tanha.png",
+  },
+  {
+    id: 19,
+    name: "Tanjilur Rahman",
+    designation: "Advertising Secretary",
+    image: "/committee/tanjil.png",
   },
 ];
 
@@ -103,20 +181,24 @@ export function CommitteeSection() {
       <CardContent className="p-8 text-center">
         <div className="mb-8">
           <motion.div
-            whileHover={{ rotate: 10 }}
+            whileHover={{ rotate: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-36 h-36 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
+            className="w-64 h-64 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
           >
-            <div className="text-center">
+            {/* <div className="text-center">
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
                 className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-2"
               >
-                <span className="text-xl">👨‍💻</span>
+                
               </motion.div>
-              <span className="text-xs text-muted-foreground">Member</span>
-            </div>
+            </div> */}
+            <img
+              src={member.image || "/placeholder.svg?height=300&width=300"}
+              alt={member.name}
+              className="w-full h-full object-cover rounded-full"
+            />
           </motion.div>
         </div>
         <h3 className="text-xl font-semibold text-foreground mb-3">
