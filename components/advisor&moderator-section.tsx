@@ -73,7 +73,7 @@ const advisorsAndModerators = [
     name: "Prof. Dr. Sajal Chandra Banik",
     designation: "Professor, ME",
     club_designation: "Chairman",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/advisors&moderators/Dr. Sajal Chandra Banik sir.jpeg",
     social: {
       email: "baniksajal@cuet.ac.bd",
       linkedin: "#",

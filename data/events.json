@@ -16,7 +16,7 @@
     "name": "CSE Feni",
     "date": "March 15, 2024",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/CSE Feni/cover.jpg",
     "description": "Epic robotics battle competition with 50+ teams",
     "hasDetailsPage": false,
     "details": {
@@ -70,7 +70,7 @@
     "name": "EXP 24",
     "date": "November 20, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/EXP 24/GROUP ALL.jpg",
     "description": "Showcase of latest technological innovations and startups",
     "hasDetailsPage": false,
     "details": {
@@ -133,7 +133,7 @@
     "name": "HANDS ON ARDUINO",
     "date": "September 10, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/HANDS ON ARDUINO/BANNER.jpg",
     "description": "Hands-on workshop on mechatronics systems and applications",
     "hasDetailsPage": false,
     "details": {
@@ -189,7 +189,7 @@
     "name": "PCIU LFR",
     "date": "August 5, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/PCIU LFR/GROUP.jpg",
     "description": "High-speed drone racing competition with obstacle courses",
     "hasDetailsPage": false,
     "details": {
@@ -240,7 +240,7 @@
     "name": "TECH DAY 22",
     "date": "June 18, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/TECH DAY 22/GROUP.jpg",
     "description": "48-hour hackathon focused on Internet of Things solutions",
     "hasDetailsPage": false,
     "details": {
@@ -292,7 +292,7 @@
     "name": "TECH DAY 21",
     "date": "June 18, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/TECH DAY 21/GROUP.jpg",
     "description": "48-hour hackathon focused on Internet of Things solutions",
     "hasDetailsPage": false,
     "details": {
@@ -344,7 +344,7 @@
     "name": "TECH DAY 24",
     "date": "June 18, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/TECH DAY 24/GROUP.jpg",
     "description": "48-hour hackathon focused on Internet of Things solutions",
     "hasDetailsPage": false,
     "details": {
@@ -396,7 +396,7 @@
     "name": "WORKSHOP CEUSC",
     "date": "June 18, 2023",
     "status": "completed",
-    "logo": "/placeholder.svg?height=80&width=80",
+    "logo": "/events/WORKSHOP CEUSC/GROUP.jpg",
     "description": "48-hour hackathon focused on Internet of Things solutions",
     "hasDetailsPage": false,
     "details": {
