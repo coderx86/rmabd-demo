@@ -9,6 +9,30 @@ import { motion } from "framer-motion";
 
 const advisorsAndModerators = [
   {
+    id: 1,
+    name: "Prof. Dr. Sajal Chandra Banik",
+    designation: "Professor, ME || Chairman, RMA",
+    club_designation: "Chairman",
+    image: "/advisors&moderators/Dr. Sajal Chandra Banik sir.jpeg",
+    social: {
+      email: "baniksajal@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
+    id: 2,
+    name: "Prof. Dr. Quazi Delwar Hossain",
+    designation: "Professor, EEE || Chief Moderator, RMA",
+    club_designation: "Chief Moderator",
+    image: "/advisors&moderators/Dr. Quazi Delwar Hossain sir.jpg",
+    social: {
+      email: "quazi@cuet.ac.bd",
+      linkedin: "#",
+      facebook: "#",
+    },
+  },
+  {
     id: 11,
     name: "Prof. Dr. Jamal Uddin Ahamed",
     designation: "Professor, ME",
@@ -64,30 +88,6 @@ const advisorsAndModerators = [
     image: "/placeholder.svg?height=300&width=300",
     social: {
       email: "#",
-      linkedin: "#",
-      facebook: "#",
-    },
-  },
-  {
-    id: 1,
-    name: "Prof. Dr. Sajal Chandra Banik",
-    designation: "Professor, ME",
-    club_designation: "Chairman",
-    image: "/advisors&moderators/Dr. Sajal Chandra Banik sir.jpeg",
-    social: {
-      email: "baniksajal@cuet.ac.bd",
-      linkedin: "#",
-      facebook: "#",
-    },
-  },
-  {
-    id: 2,
-    name: "Prof. Dr. Quazi Delwar Hossain",
-    designation: "Professor, EEE",
-    club_designation: "Chief Moderator",
-    image: "/advisors&moderators/Dr. Quazi Delwar Hossain sir.jpg",
-    social: {
-      email: "quazi@cuet.ac.bd",
       linkedin: "#",
       facebook: "#",
     },
