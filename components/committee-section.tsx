@@ -22,131 +22,137 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const allCommitteeMembers = [
-  {
+   {
     id: 1,
-    name: "Alif Haidar",
-    designation: "General Secretary",
-    image: "/committee/alif.png",
+    name: "Obidullah Mahmud Jamy",
+    designation: "Public Relations Secretary",
+    image: "/committee/jamy.jpeg",
   },
   {
     id: 2,
-    name: "Md. Ashiqur Rahman Hridoy",
-    designation: "Project Secretary",
-    image: "/committee/ashiq.png",
+    name: "Md Ashraful Alam Tamim ",
+    designation: "Organizing Secretary",
+    image: "/committee/tamim.jpg",
   },
   {
     id: 3,
-    name: "Badhon Saha",
-    designation: "Archive Secretary",
-    image: "/committee/badhon.png",
+    name: "Matiur Rahman",
+    designation: "Vice President(Management)",
+    image: "/committee/matiur.jpg",
   },
   {
     id: 4,
-    name: "Sayma Sultana Chaity",
-    designation: "Public Relations Officer",
-    image: "/committee/chaity.png",
+    name: "Israth Jahan",
+    designation: "Joint General Secretary(Management)",
+    image: "/committee/israth.jpg",
   },
   {
     id: 5,
-    name: "Md Hasibur Rahman",
-    designation: "Logistics Manager",
-    image: "/committee/hasib.png",
+    name: "Anindya Barua",
+    designation: "General Secretary",
+    image: "/committee/anindya.jpg",
   },
   {
     id: 6,
-    name: "Md Imtiaz Hossen",
-    designation: "Publication Secretary",
-    image: "/committee/imtiaz.png",
+    name: "Rizuanul Alam",
+    designation: "Finance Secretary",
+    image: "/committee/rizuanul.jpg",
   },
   {
     id: 7,
-    name: "Itquan Hossen",
-    designation: "Vice President(Admin)",
-    image: "/committee/itquan.png",
+    name: "Nazya Mustafiz",
+    designation: "Visual & Graphics Secretary",
+    image: "/committee/nazya.jpg",
   },
   {
     id: 8,
-    name: "Md. Ismail Hossain Maruf",
-    designation: "Organizing Secretary",
-    image: "/committee/maruf.png",
-  },
-  {
-    id: 20,
-    name: "Md.Masud Parves",
-    designation: "Strategy & Sponsorship Secretary",
-    image: "/committee/masud.png",
-  },
-  {
-    id: 21,
-    name: "Nahid Alom Nur",
-    designation: "Workshop & Seminar Secretary",
-    image: "/committee/nahid.png",
+    name: "G M Faysal Taysir",
+    designation: "President",
+    image: "/committee/faysal.jpg",
   },
   {
     id: 9,
-    name: "Nilmadhab Das Partha",
-    designation: "Joint Organizing Secretary",
-    image: "/committee/partha.png",
-  },
-  {
-    id: 10,
-    name: "Prithwi Saha",
-    designation: "Social Media Strategist",
-    image: "/committee/prithwi.png",
-  },
-  {
-    id: 11,
-    name: "Mohammad Rafiq",
-    designation: "Joint General Secretary(Technical)",
-    image: "/committee/rafiq.png",
+    name: "Md. Rayhanul Nayeem",
+    designation: "Project Secretary",
+    image: "/committee/rayhanul.jpg",
   },
   {
     id: 12,
-    name: "Rakibul Islam",
-    designation: "Lab Administrator",
-    image: "/committee/rakib.png",
+    name: "Abul Hasan",
+    designation: "Logistics Secretary",
+    image: "/committee/abul.jpg",
   },
   {
     id: 13,
-    name: "Nafsheen Reza Reedeka",
-    designation: "Industry Relations Secretary",
-    image: "/committee/Reedeka.png",
+    name: "Mohammad Sami",
+    designation: "Joint General Secretary",
+    image: "/committee/sami.jpg",
   },
   {
     id: 14,
-    name: "Md Sadik Imtiaz",
-    designation: "Finance Secretary",
-    image: "/committee/Sadik.png",
+    name: "Israth Jahan",
+    designation: "Joint General Secretary(Management)",
+    image: "/committee/israth.jpg",
   },
   {
     id: 15,
-    name: "Sayan Paul",
-    designation: "President",
-    image: "/committee/Sayan.png",
+    name: "Somaya Shikder",
+    designation: "Lab Administrator",
+    image: "/committee/somaya.jpg",
   },
   {
     id: 16,
-    name: "Md Kamruzzaman",
-    designation: "Vice President(Technical)",
-    image: "/committee/siam.png",
+    name: "Israt Jahan Habiba",
+    designation: "Joint Organizing Secretary",
+    image: "/committee/israt.jpg",
   },
   {
     id: 17,
-    name: "Tanzeem Tahmeed Reza",
-    designation: "Vice President(Management)",
-    image: "/committee/T T Reza.png",
+    name: "Sompa Rani Biswas",
+    designation: "Publication Secretary",
+    image: "/committee/sompa.jpg",
   },
   {
     id: 18,
-    name: "Sanjana Kabir Tanha",
-    designation: "Operations Secretary",
-    image: "/committee/tanha.png",
+    name: "MD Nafis Shahriar Niloy",
+    designation: "Archive Secretary",
+    image: "/committee/nafis.jpg",
   },
   {
     id: 19,
-    name: "Tanjilur Rahman",
+    name: "Istahak Ahammed Emon",
     designation: "Advertising Secretary",
-    image: "/committee/tanjil.png",
+    image: "/committee/istahak.jpg",
+  },
+  {
+    id: 20,
+    name: "Ahasan Habib",
+    designation: "Office Secretary",
+    image: "/committee/ahasan.jpg",
+  },
+  {
+    id: 21,
+    name: "Nafiz Imtiaz Rafi",
+    designation: "Industry Relations Secretary",
+    image: "/committee/rafi.jpg",
+  },
+  {
+    id: 22,
+    name: "Kazi Ahsan Ahmed Akaid",
+    designation: "Advertising Secretary",
+    image: "/committee/abul.jpg",
+  },
+  {
+    id: 23,
+    name: "Jahirul Alam",
+    designation: "Operations Secretary",
+    image: "/committee/jahirul.jpg",
+  },
+  {
+    id: 24,
+    name: "Istiak Uddin Tusher",
+    designation: "Strategy & Sponsorship Secretary",
+    image: "/committee/istiak.jpg",
   },
 ];
 
@@ -185,15 +191,6 @@ export function CommitteeSection() {
             transition={{ duration: 0.3 }}
             className="sm:w-64 sm:h-64 w-48 h-48 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
           >
-            {/* <div className="text-center">
-              <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-2"
-              >
-                
-              </motion.div>
-            </div> */}
             <img
               src={member.image || "/placeholder.svg?height=300&width=300"}
               alt={member.name}
@@ -277,26 +274,6 @@ export function CommitteeSection() {
               <ChevronRight className="h-6 w-6" />
             </CarouselNext>
           </Carousel>
-
-          {/* Auto-play Status Indicator */}
-          {/* <div className="flex justify-center mt-6 space-x-2 items-center">
-            <div className="flex space-x-2">
-              {Array.from({ length: Math.ceil(allCommitteeMembers.length / 3) }).map((_, index) => (
-                <div
-                  key={index}
-                  className="w-2 h-2 rounded-full bg-muted-foreground/30 transition-colors duration-300"
-                />
-              ))}
-            </div>
-            <div className="ml-4 flex items-center space-x-2">
-              <div
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  isHovered ? "bg-red-400" : "bg-green-400"
-                }`}
-              />
-              <span className="text-xs text-muted-foreground">{isHovered ? "Paused" : "Auto-play"}</span>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@
     "status": "upcoming",
     "logo": "/placeholder.svg?height=80&width=80",
     "description": "Annual robotics competition featuring combat robots",
-    "hasDetailsPage": true,
+    "hasDetailsPage": false,
     "details": {
       "gallery": []
     }

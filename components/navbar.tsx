@@ -37,7 +37,7 @@ export function Navbar() {
   const navItems = isEventsPage ? eventsNavItems : homeNavItems;
 
   return (
-    <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-border card-shadow w-full overflow-x-hidden">
+    <nav className="fixed bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 top-0 z-50 border-b border-border card-shadow w-full overflow-x-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}

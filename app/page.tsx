@@ -23,7 +23,7 @@ export default function Home() {
           <AboutSection />
           <AdvisorAndModeratorSection />
           <CommitteeSection />
-          <ExecutiveSection />
+          {/* <ExecutiveSection /> */}
           <AlumniSection />
           <Gallery />
           <ContactInfo />
