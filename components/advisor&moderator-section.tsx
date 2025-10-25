@@ -12,7 +12,7 @@ export function AdvisorAndModeratorSection() {
   return (
     <section className="py-24 bg-cream dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="section-heading text-foreground mb-6">
             Our <span className="text-primary">Advisors & Moderators</span>
           </h2>
@@ -22,40 +22,45 @@ export function AdvisorAndModeratorSection() {
         </AnimatedSection>
 
         <StaggerContainer
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           staggerDelay={0.2}
         >
           {advisorsAndModerators.map((advisorOrModerator) => (
             <motion.div
               key={advisorOrModerator.id}
-              whileHover={{ y: -10, scale: 1.02 }}
+              className="h-full"
+              whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full">
-                <CardContent className="p-8 text-center">
-                  <div className="mb-8">
-                    <motion.div
-                      whileHover={{ rotate: 0, scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                      className="sm:w-64 sm:h-64 w-48 h-48 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center"
-                    >
-                      <img
-                        src={
-                          advisorOrModerator.image ||
-                          "/placeholder.svg?height=300&width=300"
-                        }
-                        alt={advisorOrModerator.name}
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </motion.div>
+              <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full flex flex-col">
+                <CardContent className="p-5 text-center flex flex-col flex-1 justify-between">
+                  <div className="flex-1 flex flex-col">
+                    <div className="mb-4">
+                      <motion.div
+                        whileHover={{ rotate: 0, scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-3 border-primary/20 flex items-center justify-center"
+                      >
+                        <img
+                          src={
+                            advisorOrModerator.image ||
+                            "/placeholder.svg?height=300&width=300"
+                          }
+                          alt={advisorOrModerator.name}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      </motion.div>
+                    </div>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {advisorOrModerator.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {advisorOrModerator.designation}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {advisorOrModerator.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-8">
-                    {advisorOrModerator.designation}
-                  </p>
-                  <div className="flex justify-center space-x-4">
+                  <div className="flex justify-center space-x-3 mt-5">
                     {[Mail, Linkedin, Facebook].map((Icon, index) => (
                       <motion.div
                         key={index}
@@ -63,11 +68,11 @@ export function AdvisorAndModeratorSection() {
                         whileTap={{ scale: 0.95 }}
                       >
                         <Button
-                          size="icon"
+                          size="sm"
                           variant="outline"
-                          className="hover:bg-primary hover:text-primary-foreground hover-transition"
+                          className="h-8 w-8 p-0 hover:bg-primary hover:text-primary-foreground hover-transition"
                         >
-                          <Icon className="h-4 w-4" />
+                          <Icon className="h-3.5 w-3.5" />
                         </Button>
                       </motion.div>
                     ))}
