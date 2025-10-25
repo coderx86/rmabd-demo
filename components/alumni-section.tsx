@@ -156,13 +156,13 @@ export function AlumniSection() {
   };
 
   const AlumniCard = ({ alumni }: { alumni: (typeof allAlumni)[0] }) => (
-    <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full relative overflow-hidden mx-auto max-w-sm">
-      <CardContent className="p-8 text-center">
-        <div className="mb-8 pt-4">
+    <Card className="group hover-transition hover:shadow-lg bg-card border-border h-full relative overflow-hidden">
+      <CardContent className="p-5 text-center flex flex-col h-full">
+        <div className="mb-4">
           <motion.div
             whileHover={{ rotate: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="sm:w-64 sm:h-64 w-48 h-48 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-4 border-primary/20 flex items-center justify-center relative"
+            className="w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-accent/20 border-3 border-primary/20 flex items-center justify-center relative"
           >
             <img
               src={alumni.image || "/placeholder.svg?height=300&width=300"}
@@ -172,20 +172,15 @@ export function AlumniSection() {
           </motion.div>
         </div>
 
-        <h3 className="text-xl font-semibold text-foreground mb-2">
-          {alumni.name}
-        </h3>
-        <p className="text-primary font-medium mb-1">{alumni.designation}</p>
-        <div className="flex items-center justify-center space-x-2 mb-6">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex items-center space-x-1 text-muted-foreground"
-          >
-            <span className="text-sm font-medium">{alumni.company}</span>
-          </motion.div>
+        <div className="flex-1 flex flex-col justify-center">
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            {alumni.name}
+          </h3>
+          <p className="text-sm text-primary font-medium mb-1">{alumni.designation}</p>
+          <p className="text-xs text-muted-foreground mb-4">{alumni.company}</p>
         </div>
 
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-3 mt-auto">
           {[Mail, Linkedin, Facebook].map((Icon, index) => (
             <motion.div
               key={index}
@@ -193,11 +188,11 @@ export function AlumniSection() {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                size="icon"
+                size="sm"
                 variant="outline"
-                className="hover:bg-primary hover:text-primary-foreground hover-transition bg-transparent"
+                className="h-8 w-8 p-0 hover:bg-primary hover:text-primary-foreground hover-transition bg-transparent"
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-3.5 w-3.5" />
               </Button>
             </motion.div>
           ))}
@@ -209,7 +204,7 @@ export function AlumniSection() {
   return (
     <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="section-heading text-foreground mb-6">
             Our <span className="text-primary">Alumni</span>
           </h2>
@@ -234,15 +229,16 @@ export function AlumniSection() {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-3">
               {allAlumni.map((alumni) => (
                 <CarouselItem
                   key={alumni.id}
-                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                  className="pl-2 md:pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
                   <motion.div
-                    whileHover={{ y: -8, scale: 1.02 }}
+                    whileHover={{ y: -6, scale: 1.02 }}
                     transition={{ duration: 0.3 }}
+                    className="h-full"
                   >
                     <AlumniCard alumni={alumni} />
                   </motion.div>
@@ -251,64 +247,64 @@ export function AlumniSection() {
             </CarouselContent>
 
             {/* Custom Navigation Buttons */}
-            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-primary/90 hover:bg-primary text-primary-foreground border-0 shadow-lg w-12 h-12 rounded-full z-10">
-              <ChevronLeft className="h-6 w-6" />
+            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-primary/90 hover:bg-primary text-primary-foreground border-0 shadow-lg w-10 h-10 rounded-full z-10">
+              <ChevronLeft className="h-5 w-5" />
             </CarouselPrevious>
-            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-primary/90 hover:bg-primary text-primary-foreground border-0 shadow-lg w-12 h-12 rounded-full z-10">
-              <ChevronRight className="h-6 w-6" />
+            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-primary/90 hover:bg-primary text-primary-foreground border-0 shadow-lg w-10 h-10 rounded-full z-10">
+              <ChevronRight className="h-5 w-5" />
             </CarouselNext>
           </Carousel>
         </div>
 
         {/* Alumni Stats */}
-        <AnimatedSection delay={0.7} className="mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <AnimatedSection delay={0.7} className="mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-card rounded-lg card-shadow border border-border"
+              className="text-center p-5 bg-card rounded-lg card-shadow border border-border"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="text-4xl font-bold text-primary mb-3"
+                className="text-3xl font-bold text-primary mb-2"
               >
                 500+
               </motion.div>
-              <div className="text-muted-foreground">Total Alumni</div>
+              <div className="text-sm text-muted-foreground">Total Alumni</div>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-card rounded-lg card-shadow border border-border"
+              className="text-center p-5 bg-card rounded-lg card-shadow border border-border"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.0 }}
-                className="text-4xl font-bold text-primary mb-3"
+                className="text-3xl font-bold text-primary mb-2"
               >
                 50+
               </motion.div>
-              <div className="text-muted-foreground">Companies Worldwide</div>
+              <div className="text-sm text-muted-foreground">Companies Worldwide</div>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -5, scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-card rounded-lg card-shadow border border-border"
+              className="text-center p-5 bg-card rounded-lg card-shadow border border-border"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="text-4xl font-bold text-primary mb-3"
+                className="text-3xl font-bold text-primary mb-2"
               >
                 25+
               </motion.div>
-              <div className="text-muted-foreground">Countries</div>
+              <div className="text-sm text-muted-foreground">Countries</div>
             </motion.div>
           </div>
         </AnimatedSection>
