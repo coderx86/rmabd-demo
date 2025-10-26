@@ -5,8 +5,12 @@ import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { StaggerContainer } from "@/components/stagger-container"
 import { motion } from "framer-motion"
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 
 export function ContactInfo() {
+  // CUET Location Coordinates
+  const position = { lat: 22.461964358581874, lng: 91.9710152533906 }
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -20,24 +24,24 @@ export function ContactInfo() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Location Placeholder */}
+          {/* Google Map */}
           <AnimatedSection direction="left" delay={0.2} className="order-2 lg:order-1">
             <motion.div
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="rounded-lg card-shadow bg-gradient-to-br from-primary/20 to-accent/20 h-96 flex items-center justify-center"
+              className="rounded-lg overflow-hidden card-shadow h-96"
             >
-              <div className="text-center p-8">
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                  className="w-20 h-20 bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-4"
+              <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
+                <Map
+                  defaultCenter={position}
+                  defaultZoom={15}
+                  gestureHandling={'greedy'}
+                  disableDefaultUI={false}
+                  mapId="cuet-rma-map"
                 >
-                  <MapPin className="h-10 w-10 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-bold text-foreground mb-2">CUET Campus</h3>
-                <p className="text-muted-foreground">Our Location</p>
-              </div>
+                  <Marker position={position} />
+                </Map>
+              </APIProvider>
             </motion.div>
           </AnimatedSection>
 
@@ -76,7 +80,12 @@ export function ContactInfo() {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2 text-lg">Email</h3>
-                  <p className="text-light-black dark:text-light-white">rma@cuet.ac.bd</p>
+                  <a 
+                    href="mailto:rma@cuet.ac.bd"
+                    className="text-light-black dark:text-light-white hover:text-primary transition-colors"
+                  >
+                    rma@cuet.ac.bd
+                  </a>
                 </div>
               </div>
 
@@ -92,9 +101,12 @@ export function ContactInfo() {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2 text-lg">Phone</h3>
-                  <a href="tel:+88031714865" className="text-light-black dark:text-light-white">
-  +880 31 714865
-</a>
+                  <a 
+                    href="tel:+88031714865" 
+                    className="text-light-black dark:text-light-white hover:text-primary transition-colors"
+                  >
+                    +880 31 714865
+                  </a>
                 </div>
               </div>
             </StaggerContainer>
