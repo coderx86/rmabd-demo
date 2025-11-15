@@ -29,7 +29,7 @@ export function ContactInfo() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="rounded-lg overflow-hidden card-shadow h-96"
+              className="rounded-lg overflow-hidden card-shadow h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[450px]"
             >
               {/* <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
                 <Map
@@ -50,7 +50,8 @@ export function ContactInfo() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+                className="w-full h-full border-0"
+                title="Chittagong University of Engineering and Technology (CUET) Location Map"
               />
             </motion.div>
           </AnimatedSection>
